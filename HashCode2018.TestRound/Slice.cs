@@ -3,7 +3,7 @@ using System.Text;
 
 namespace HashCode2018.TestRound
 {
-    public class Slice
+    public class Slice: IEquatable<Slice>
     {
         private Slice _parent;
         private int _r0;
@@ -40,7 +40,7 @@ namespace HashCode2018.TestRound
             }
         }
 
-        protected static Slice CutSlice(Slice parent, int r0, int r1, int c0, int c1)
+        protected static Slice NewCut(Slice parent, int r0, int r1, int c0, int c1)
         {
             var slice = new Slice(r1 - r0 + 1, c1 - c0 + 1)
             {
@@ -79,10 +79,53 @@ namespace HashCode2018.TestRound
                     sb.Append(column);
                 }
 
-                sb.Append(Environment.NewLine);
+                sb.Append("\n");
             }
 
             return sb.ToString();
+        }
+
+        public string GetNumbers()
+        {
+            return string.Format("{0} {1} {2} {3}", _r0, _c0, _r1, _c1);
+        }
+
+        public bool Intersect(Slice other)
+        {
+            return _r1 <= other._c0 && other._r1 <= _c0 && _r0 <= other._c1 && other._r0 <= _c1;
+        }
+
+        public bool Equals(Slice other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Equals(_parent, other._parent) && _r0 == other._r0 && _r1 == other._r1 && _c0 == other._c0 &&
+                   _c1 == other._c1 && Equals(Slices, other.Slices) && _rows == other._rows &&
+                   _columns == other._columns;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Slice) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (_parent != null ? _parent.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ _r0;
+                hashCode = (hashCode * 397) ^ _r1;
+                hashCode = (hashCode * 397) ^ _c0;
+                hashCode = (hashCode * 397) ^ _c1;
+                hashCode = (hashCode * 397) ^ (Slices != null ? Slices.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ _rows;
+                hashCode = (hashCode * 397) ^ _columns;
+                return hashCode;
+            }
         }
     }
 }

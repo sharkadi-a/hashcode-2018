@@ -6,7 +6,6 @@ namespace HashCode2018.TestRound
 {
     public sealed class Pizza: Slice
     {
-
         public Pizza(int rows, int columns) : base(rows, columns)
         {
         }
@@ -24,7 +23,7 @@ namespace HashCode2018.TestRound
 
         public Slice Cut(int r0, int r1, int c0, int c1)
         {
-            return CutSlice(this, r0, r1, c0, c1);
+            return NewCut(this, r0, r1, c0, c1);
         }
     }
 }
