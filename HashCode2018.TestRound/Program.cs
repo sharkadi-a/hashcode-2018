@@ -32,7 +32,7 @@ namespace HashCode2018.TestRound
             pizza.Fill(pizzaData);
 
             Console.WriteLine(pizza);
-            Console.WriteLine(pizza.Peek(2, 60));
+            Console.WriteLine(pizza.PeekCell(2, 60));
 
             var slice = pizza.Cut(1, 1, 1, 3);
             Console.WriteLine("slice:");
