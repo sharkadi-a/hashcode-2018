@@ -1,9 +1,9 @@
-HASH CODE
+Google Hash Code
 =========
 
-Repo for hash code 2018:
+Репозиторий для Google # Hash Code 2018:
 
-* HashCode2018.TestRound - solution for test round (pizza)
+* HashCode2018.TestRound - солюшен для тестового раунда (разрезание пиццы).
 
 _Fabolous coders -be fab, code fab_
 
