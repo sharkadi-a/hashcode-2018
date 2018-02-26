@@ -52,7 +52,7 @@ namespace HashCode2018.TestRound
             Console.WriteLine("slice2 intersect slice3:");
             Console.WriteLine(slice2.Intersect(slice3));
             
-            Console.ReadKey();
+            Console.Read();
         }
 
         private static void Run(IEnumerable<FileInfo> fileInfos)
