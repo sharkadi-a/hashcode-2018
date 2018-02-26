@@ -26,7 +26,7 @@ namespace HashCode2018.TestRoundPizza
 
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
         {
-	        var patterns = GetPatterns();
+	        var patterns = GetPatterns(minIngridientCount, maxCellsPerSliceCount);
 
 			foreach (var cell in _pizza)
             {
@@ -46,7 +46,7 @@ namespace HashCode2018.TestRoundPizza
 
 	    
 
-	    private List<Rectangle> GetPatterns()
+	    private List<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
 	    {
 		    throw new Exception();
 	    }
