@@ -19,7 +19,7 @@ namespace HashCode2018.TestRoundPizza
                 _cuttedOutPices[index] = new bool[_pizza.Columns];
         }
 
-        private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount)
+        private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount, IList<Rectangle> rectangles)
         {
 			throw new Exception();
 		}
@@ -35,7 +35,7 @@ namespace HashCode2018.TestRoundPizza
 					continue;
 	            }
 
-                var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount);
+                var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, patterns);
                 if (slice != null)
                 {
                     //_renderer.Render(???);
