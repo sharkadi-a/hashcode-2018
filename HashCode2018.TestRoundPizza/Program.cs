@@ -72,7 +72,7 @@ namespace HashCode2018.TestRoundPizza
                 var pizza = new Pizza(rows, columns);
                 pizza.Fill(lines.Skip(1));
                 
-                var pizzaCutter = new PizzaCutter(pizza);
+                var pizzaCutter = new PizzaCutter(pizza, new ConsoleRenderer());
                 var slices = pizzaCutter.Cut(minIngridients, maxCellsPerSlice).ToArray();
 
                 var output = new StringBuilder(slices.Length * 5);

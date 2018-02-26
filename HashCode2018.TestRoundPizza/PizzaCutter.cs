@@ -6,11 +6,13 @@ namespace HashCode2018.TestRoundPizza
     public sealed class PizzaCutter
     {
         private readonly Pizza _pizza;
+        private readonly IRenderer _renderer;
         private bool[][] _cuttedOutPices;
 
-        public PizzaCutter(Pizza pizza)
+        public PizzaCutter(Pizza pizza, IRenderer renderer)
         {
             _pizza = pizza;
+            _renderer = renderer;
             _cuttedOutPices = new bool[_pizza.Rows][];
             for (var index = 0; index < _cuttedOutPices.Length; index++)
                 _cuttedOutPices[index] = new bool[_pizza.Columns];
@@ -28,6 +30,7 @@ namespace HashCode2018.TestRoundPizza
                 var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, maxCellsPerSliceCount);
                 if (slice != null)
                 {
+                    //_renderer.Render(???);
                     yield return slice;
                 }
             }
