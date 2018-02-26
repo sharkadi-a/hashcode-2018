@@ -46,9 +46,28 @@ namespace HashCode2018.TestRoundPizza
 
 	    
 
-	    private List<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
+	    private IEnumerable<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
 	    {
-		    throw new Exception();
+		    var minCellsSize = minIngridientCount * 2;
+
+			var templateSized = new List<int>();
+		    for (var i = minCellsSize; i < maxCellsPerSliceCount; i++)
+		    {
+			    if (i % 2 == 0)
+			    {
+				    templateSized.Add(i);
+
+				}
+		    }
+
+			var rectangles = new List<Rectangle>();
+			foreach (var size in templateSized)
+		    {
+			    
+		    }
+
+		    return rectangles;
+
 	    }
 
 	    public IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
