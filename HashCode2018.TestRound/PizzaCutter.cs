@@ -18,7 +18,7 @@ namespace HashCode2018.TestRound
                 _cuttedOutPices[index] = new bool[_pizza.Columns];
         }
 
-        private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount, int maxCellsPerSliceCount)
+        private Slice CrawlForSlice(int row, int column, int minIngridientCount, int maxCellsPerSliceCount)
         {
             throw new NotImplementedException();
         }
@@ -27,6 +27,7 @@ namespace HashCode2018.TestRound
         {
             foreach (var cell in _pizza)
             {
+				if (cell.)
                 var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, maxCellsPerSliceCount);
                 if (slice != null)
                 {

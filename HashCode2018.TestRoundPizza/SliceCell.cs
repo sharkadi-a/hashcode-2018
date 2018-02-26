@@ -5,12 +5,14 @@
         private readonly int _row;
         private readonly int _column;
         private readonly char _ingridient;
+	    public bool IsSliced;
 
-        public SliceCell(int row, int column, char ingridient)
+		public SliceCell(int row, int column, char ingridient)
         {
             _row = row;
             _column = column;
             _ingridient = ingridient;
+	        IsSliced = false;
         }
 
         public int Row

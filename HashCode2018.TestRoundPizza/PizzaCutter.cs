@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 
 namespace HashCode2018.TestRoundPizza
 {
@@ -18,16 +19,23 @@ namespace HashCode2018.TestRoundPizza
                 _cuttedOutPices[index] = new bool[_pizza.Columns];
         }
 
-        private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount, int maxCellsPerSliceCount)
+        private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount)
         {
-            throw new NotImplementedException();
-        }
+			throw new Exception();
+		}
 
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
         {
-            foreach (var cell in _pizza)
+	        var patterns = GetPatterns();
+
+			foreach (var cell in _pizza)
             {
-                var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, maxCellsPerSliceCount);
+	            if (cell.IsSliced)
+	            {
+					continue;
+	            }
+
+                var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount);
                 if (slice != null)
                 {
                     //_renderer.Render(???);
@@ -36,7 +44,14 @@ namespace HashCode2018.TestRoundPizza
             }
         }
 
-        public IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
+	    
+
+	    private List<Rectangle> GetPatterns()
+	    {
+		    throw new Exception();
+	    }
+
+	    public IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
         {
             return CutPizza(minIngridientCount, maxCellsPerSliceCount);
         }
