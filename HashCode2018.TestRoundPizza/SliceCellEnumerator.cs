@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRoundPizza
 {
     internal class SliceCellEnumerator: IEnumerator<SliceCell>
     {

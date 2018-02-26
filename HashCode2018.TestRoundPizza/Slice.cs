@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRoundPizza
 {
     public class Slice: IEquatable<Slice>, IEnumerable<SliceCell>
     {
         private readonly Slice _parent;
-        protected readonly char[][] Slices;
+        protected readonly char[][] Cells;
         private readonly int _rows;
         private readonly int _columns;
 
@@ -34,10 +34,10 @@ namespace HashCode2018.TestRound
         {
             _rows = rows;
             _columns = columns;
-            Slices = new char[_rows][];
-            for (int i = 0; i < Slices.Length; i++)
+            Cells = new char[_rows][];
+            for (int i = 0; i < Cells.Length; i++)
             {
-                Slices[i] = new char[_columns];
+                Cells[i] = new char[_columns];
             }
         }
 
@@ -54,11 +54,11 @@ namespace HashCode2018.TestRound
         {
             var slice = new Slice(parent, r0, r1, c0, c1);
 
-            for (int i = 0; i < slice.Slices.Length; i++)
+            for (int i = 0; i < slice.Cells.Length; i++)
             {
-                for (int j = 0; j < slice.Slices[i].Length; j++)
+                for (int j = 0; j < slice.Cells[i].Length; j++)
                 {
-                    slice.Slices[i][j] = parent.Peek(r0 + i, c0 + j);
+                    slice.Cells[i][j] = parent.Peek(r0 + i, c0 + j);
                 }
             }
 
@@ -69,7 +69,7 @@ namespace HashCode2018.TestRound
         {
             if (row < 0 || row >= _rows || column < 0 || column >= _columns)
                 return OutOfBound;
-            return Slices[row][column];
+            return Cells[row][column];
         }
 
         public SliceCell PeekCell(int row, int column)
@@ -85,7 +85,7 @@ namespace HashCode2018.TestRound
         public override string ToString()
         {
             var sb = new StringBuilder(_rows * _columns + (Environment.NewLine.Length * 2));
-            foreach (char[] row in Slices)
+            foreach (char[] row in Cells)
             {
                 foreach (char column in row)
                 {
@@ -113,7 +113,7 @@ namespace HashCode2018.TestRound
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
             return Equals(_parent, other._parent) && R0 == other.R0 && R1 == other.R1 && C0 == other.C0 &&
-                   C1 == other.C1 && Equals(Slices, other.Slices) && _rows == other._rows &&
+                   C1 == other.C1 && Equals(Cells, other.Cells) && _rows == other._rows &&
                    _columns == other._columns;
         }
 
@@ -134,7 +134,7 @@ namespace HashCode2018.TestRound
                 hashCode = (hashCode * 397) ^ R1;
                 hashCode = (hashCode * 397) ^ C0;
                 hashCode = (hashCode * 397) ^ C1;
-                hashCode = (hashCode * 397) ^ (Slices != null ? Slices.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Cells != null ? Cells.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ _rows;
                 hashCode = (hashCode * 397) ^ _columns;
                 return hashCode;

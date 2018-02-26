@@ -4,19 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRoundPizza
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
-            if (args.Length == 0)
-            {
-                Test();
-                return;
-            }
+            //if (args.Length == 0)
+            //{
+            //    Test();
+            //    return;
+            //}
             
-            Run(args.Select(arg => new FileInfo(arg)));
+            Run(new [] {new FileInfo("D:\\small.in")});
+	        Console.ReadLine();
         }
 
         private static void Test()
@@ -29,7 +30,7 @@ namespace HashCode2018.TestRound
             };
             
             var pizza = new Pizza(3, 5);
-            pizza.Fill(pizzaData);
+            pizza.Fill( pizzaData );
 
             Console.WriteLine(pizza);
             Console.WriteLine(pizza.PeekCell(2, 60));

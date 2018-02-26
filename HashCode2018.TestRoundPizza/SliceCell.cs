@@ -1,4 +1,4 @@
-﻿namespace HashCode2018.TestRound
+﻿namespace HashCode2018.TestRoundPizza
 {
     public struct SliceCell
     {
