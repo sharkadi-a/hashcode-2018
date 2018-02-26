@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRoundPizza
 {
     public sealed class Pizza: Slice
     {
@@ -15,8 +13,8 @@ namespace HashCode2018.TestRound
             int i = 0;
             foreach (var str in stringData)
             {
-                for (var j = 0; j < Slices[i].Length; j++)
-                    Slices[i][j] = str[j];
+                for (var j = 0; j < Cells[i].Length; j++)
+                    Cells[i][j] = str[j];
                 i++;
             }
         }

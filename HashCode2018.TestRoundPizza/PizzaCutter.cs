@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRoundPizza
 {
     public sealed class PizzaCutter
     {
