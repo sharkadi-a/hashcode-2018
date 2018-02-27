@@ -28,23 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.PathTBx = new System.Windows.Forms.TextBox();
 			this.BrowseBtn = new System.Windows.Forms.Button();
 			this.StartBtn = new System.Windows.Forms.Button();
 			this.ResultTBx = new System.Windows.Forms.TextBox();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.ChartPanel = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.StopBtn = new System.Windows.Forms.Button();
+			this.PathTBx = new System.Windows.Forms.TextBox();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// PathTBx
-			// 
-			this.PathTBx.Location = new System.Drawing.Point(22, 12);
-			this.PathTBx.Name = "PathTBx";
-			this.PathTBx.Size = new System.Drawing.Size(327, 20);
-			this.PathTBx.TabIndex = 0;
-			this.PathTBx.Text = global::HashCode2018.QualificationRound.WinForm.Properties.Settings.Default.LastFilePath;
 			// 
 			// BrowseBtn
 			// 
@@ -64,6 +56,7 @@
 			this.StartBtn.TabIndex = 2;
 			this.StartBtn.Text = "Start";
 			this.StartBtn.UseVisualStyleBackColor = true;
+			this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
 			// 
 			// ResultTBx
 			// 
@@ -76,11 +69,11 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(371, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(709, 683);
-			this.panel1.TabIndex = 4;
+			this.ChartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ChartPanel.Location = new System.Drawing.Point(371, 0);
+			this.ChartPanel.Name = "ChartPanel";
+			this.ChartPanel.Size = new System.Drawing.Size(709, 683);
+			this.ChartPanel.TabIndex = 4;
 			// 
 			// panel2
 			// 
@@ -103,13 +96,22 @@
 			this.StopBtn.TabIndex = 4;
 			this.StopBtn.Text = "Stop";
 			this.StopBtn.UseVisualStyleBackColor = true;
+			this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
+			// 
+			// PathTBx
+			// 
+			this.PathTBx.Location = new System.Drawing.Point(22, 12);
+			this.PathTBx.Name = "PathTBx";
+			this.PathTBx.Size = new System.Drawing.Size(327, 20);
+			this.PathTBx.TabIndex = 0;
+			this.PathTBx.Text = global::HashCode2018.QualificationRound.WinForm.Properties.Settings.Default.LastFilePath;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1080, 683);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.ChartPanel);
 			this.Controls.Add(this.panel2);
 			this.Name = "MainForm";
 			this.Text = "Form1";
@@ -126,7 +128,7 @@
 		private System.Windows.Forms.Button BrowseBtn;
 		private System.Windows.Forms.Button StartBtn;
 		private System.Windows.Forms.TextBox ResultTBx;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel ChartPanel;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button StopBtn;
 	}

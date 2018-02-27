@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HashCode2018.QualificationRound.WinForm.Properties;
 
 namespace HashCode2018.QualificationRound.WinForm
 {
@@ -14,9 +15,11 @@ namespace HashCode2018.QualificationRound.WinForm
 		[STAThread]
 		static void Main()
 		{
+			Settings.Default.Reload();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
+			Settings.Default.Save();
 		}
 	}
 }

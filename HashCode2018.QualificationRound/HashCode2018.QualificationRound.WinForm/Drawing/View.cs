@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashCode2018.QualificationRound.WinForm
 {
-	class MainProcces
+	class View
 	{
 	}
 }
