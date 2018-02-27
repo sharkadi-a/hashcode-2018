@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using HashCode2018.QualificationRound.WinForm.Drawing;
 
 namespace HashCode2018.QualificationRound.WinForm.Proccess
 {

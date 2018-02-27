@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using HashCode2018.QualificationRound.WinForm.Drawing;
 using HashCode2018.QualificationRound.WinForm.Proccess;
 
 namespace HashCode2018.QualificationRound.WinForm

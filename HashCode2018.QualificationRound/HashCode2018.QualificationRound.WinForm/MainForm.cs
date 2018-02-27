@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HashCode2018.QualificationRound.WinForm.Drawing;
 using HashCode2018.QualificationRound.WinForm.Properties;
+using View = HashCode2018.QualificationRound.WinForm.Drawing.View;
 
 namespace HashCode2018.QualificationRound.WinForm
 {
