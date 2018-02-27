@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace HashCode2018.TestRoundPizza
+namespace HashCode2018.TestRound
 {
     internal class Program
     {

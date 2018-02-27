@@ -1,4 +1,4 @@
-﻿namespace HashCode2018.TestRoundPizza
+﻿namespace HashCode2018.TestRound
 {
     public interface IRenderer
     {

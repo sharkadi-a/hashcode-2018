@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
+using System.Linq;
 
-namespace HashCode2018.TestRoundPizza
+namespace HashCode2018.TestRound
 {
     public sealed class PizzaCutter
     {
@@ -26,7 +26,7 @@ namespace HashCode2018.TestRoundPizza
 
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
         {
-	        var patterns = GetPatterns(minIngridientCount, maxCellsPerSliceCount);
+	        var patterns = GetPatterns(minIngridientCount, maxCellsPerSliceCount).ToList();
 
 			foreach (var cell in _pizza)
             {
@@ -43,8 +43,6 @@ namespace HashCode2018.TestRoundPizza
                 }
             }
         }
-
-	    
 
 	    private IEnumerable<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
 	    {

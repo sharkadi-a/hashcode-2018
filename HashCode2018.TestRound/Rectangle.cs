@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HashCode2018.TestRoundPizza
+﻿namespace HashCode2018.TestRound
 {
 	struct Rectangle
 	{
