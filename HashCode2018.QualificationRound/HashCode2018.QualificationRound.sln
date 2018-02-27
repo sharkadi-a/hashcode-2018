@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.QualificationRound.Core", "HashCode2018.QualificationRound.Core\HashCode2018.QualificationRound.Core.csproj", "{7578586B-08A5-4809-BCB7-5909AAA664E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.QualificationRound.WinForm", "HashCode2018.QualificationRound.WinForm\HashCode2018.QualificationRound.WinForm.csproj", "{7E9C4DA1-9110-420A-80C4-49EA36627EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9C4DA1-9110-420A-80C4-49EA36627EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9C4DA1-9110-420A-80C4-49EA36627EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9C4DA1-9110-420A-80C4-49EA36627EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9C4DA1-9110-420A-80C4-49EA36627EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
