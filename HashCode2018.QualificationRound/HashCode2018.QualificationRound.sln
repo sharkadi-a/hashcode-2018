@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.QualificationRound.Core", "HashCode2018.QualificationRound.Core\HashCode2018.QualificationRound.Core.csproj", "{7578586B-08A5-4809-BCB7-5909AAA664E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.QualificationRound.CLI", "HashCode2018.QualificationRound.CLI\HashCode2018.QualificationRound.CLI.csproj", "{56370E5D-4142-42B4-8AA9-2E7C329AEEAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.QualificationRound", "HashCode2018.QualificationRound\HashCode2018.QualificationRound.csproj", "{30707819-6807-4F9B-9552-79595CF33163}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7578586B-08A5-4809-BCB7-5909AAA664E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56370E5D-4142-42B4-8AA9-2E7C329AEEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56370E5D-4142-42B4-8AA9-2E7C329AEEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56370E5D-4142-42B4-8AA9-2E7C329AEEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56370E5D-4142-42B4-8AA9-2E7C329AEEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30707819-6807-4F9B-9552-79595CF33163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30707819-6807-4F9B-9552-79595CF33163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30707819-6807-4F9B-9552-79595CF33163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30707819-6807-4F9B-9552-79595CF33163}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
