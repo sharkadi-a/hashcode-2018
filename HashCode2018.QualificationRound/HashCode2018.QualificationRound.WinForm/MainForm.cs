@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HashCode2018.QualificationRound.Core;
+using HashCode2018.Core;
 using HashCode2018.QualificationRound.WinForm.Drawing;
 using HashCode2018.QualificationRound.WinForm.Properties;
 using View = HashCode2018.QualificationRound.WinForm.Drawing.View;

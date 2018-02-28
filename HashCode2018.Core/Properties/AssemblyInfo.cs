@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HashCode2018.QualificationRound.Core")]
+[assembly: AssemblyTitle("HashCode2018.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HashCode2018.QualificationRound.Core")]
+[assembly: AssemblyProduct("HashCode2018.Core")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7578586b-08a5-4809-bcb7-5909aaa664e4")]
+[assembly: Guid("ed67c43d-dba2-471c-8280-a872bc4e461d")]
 
 // Version information for an assembly consists of the following four values:
 //

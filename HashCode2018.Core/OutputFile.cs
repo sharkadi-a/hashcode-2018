@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HashCode2018.QualificationRound.Core
+namespace HashCode2018.Core
 {
     public sealed class OutputFile: IDisposable
     {

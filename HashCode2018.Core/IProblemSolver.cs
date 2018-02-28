@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HashCode2018.QualificationRound.Core
+namespace HashCode2018.Core
 {
     public interface IProblemSolver
     {

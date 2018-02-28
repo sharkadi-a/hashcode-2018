@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using HashCode2018.QualificationRound.Core;
+using HashCode2018.Core;
 
 namespace HashCode2018.QualificationRound
 {

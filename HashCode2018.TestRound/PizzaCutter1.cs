@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using HashCode2018.Core;
 
 namespace HashCode2018.TestRound
 {
-    public sealed partial class PizzaCutter
+    public sealed partial class PizzaCutter : IProblemSolver
     {
         private readonly Pizza _pizza;
         private readonly IRenderer _renderer;
@@ -57,5 +59,21 @@ namespace HashCode2018.TestRound
         {
             return CutPizza(minIngridientCount, maxCellsPerSliceCount);
         }
+
+	    public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
+	    {
+			// TODO:
+	    }
+
+	    public void SetLogOutput(Action<string> writeLogAction)
+	    {
+			// TODO:
+	    }
+
+	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
+	    {
+		    // TODO:
+		    throw new NotImplementedException();
+	    }
     }
 }
