@@ -17,7 +17,7 @@ namespace HashCode2018.TestRound.NetFrameWork
             _startRow = slice.R0;
             _startColumn = slice.C0;
             _currentRow = _startRow;
-            _currentColumn = _startColumn;
+            _currentColumn = _startColumn - 1;
         }
         
         public void Dispose()
@@ -27,7 +27,7 @@ namespace HashCode2018.TestRound.NetFrameWork
         public bool MoveNext()
         {
             var nextRow = _currentRow;
-            var nextColumn = _currentColumn + 1;
+	        var nextColumn = _currentColumn + 1;
             if (nextColumn > _slice.C1)
             {
                 nextColumn = _startColumn;

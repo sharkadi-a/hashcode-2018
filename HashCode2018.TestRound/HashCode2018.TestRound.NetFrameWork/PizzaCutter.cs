@@ -26,15 +26,36 @@ namespace HashCode2018.TestRound.NetFrameWork
 		    return _cuttedOutPices[sliceCell.Row][sliceCell.Column];
 	    }
 
-	    // TODO
-	    private void CutOut(Slice slice)
+	    private Slice CutOut(int startRow, int startColumn, Rectangle rectangle)
 	    {
+		    foreach (var offset in rectangle.CellsOffsets)
+		    {
+			    _cuttedOutPices[startRow + offset.y][startColumn + offset.x] = true;
+		    }
+
+		    return _pizza.Cut(startRow, startRow + rectangle.Heigth, startColumn, startColumn + rectangle.Width);
 	    }
 
         private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount, IList<Rectangle> rectangles)
         {
-			throw new Exception();
-		}
+	        foreach (var rectangle in rectangles)
+	        {
+		        int mushrooms = 0, tomatoes = 0;
+		        foreach (var offset in rectangle.CellsOffsets)
+		        {
+			        var lookup = _pizza.PeekCell(startRow + offset.y, startColumn + offset.x);
+			        if (lookup.Ingridient == Slice.OutOfBound) break;
+			        if (lookup.Ingridient == 'T') tomatoes++;
+			        if (lookup.Ingridient == 'M') mushrooms++;
+		        }
+		        if (mushrooms >= minIngridientCount && tomatoes >= minIngridientCount)
+		        {
+			        return CutOut(startRow, startColumn, rectangle);
+		        }
+			}
+
+	        return null;
+        }
 
 
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)

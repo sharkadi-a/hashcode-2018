@@ -39,6 +39,11 @@ namespace HashCode2018.TestRound.NetFrameWork
             {
                 Cells[i] = new char[_columns];
             }
+
+	        R0 = 0;
+	        R1 = rows - 1;
+	        C0 = 0;
+	        C1 = columns - 1;
         }
 
         private Slice(Slice parent, int r0, int r1, int c0, int c1): this(r1 - r0 + 1, c1 - c0 + 1)
