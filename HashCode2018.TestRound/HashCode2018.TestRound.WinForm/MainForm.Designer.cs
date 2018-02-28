@@ -64,10 +64,11 @@
 			this.ResultTBx.Location = new System.Drawing.Point(0, 83);
 			this.ResultTBx.Multiline = true;
 			this.ResultTBx.Name = "ResultTBx";
+			this.ResultTBx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.ResultTBx.Size = new System.Drawing.Size(371, 600);
 			this.ResultTBx.TabIndex = 3;
 			// 
-			// panel1
+			// ChartPanel
 			// 
 			this.ChartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ChartPanel.Location = new System.Drawing.Point(371, 0);
