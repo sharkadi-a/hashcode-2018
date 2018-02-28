@@ -9,7 +9,7 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 		private readonly Graphics _graphics;
 		private readonly int _width;
 		private readonly int _height;
-		private readonly Random _random = new Random();
+		private static Random _random = new Random();
 		public Drawer(Graphics graphics, int width, int height)
 		{
 			_graphics = graphics;
@@ -17,12 +17,16 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			_height = height;
 		}
 
-		public void Start(View view)
+		public void Start(View view, Action<string> writeMessage)
 		{
 			var pizza = view.Pizza;
 			var slice = view.NewSlice;
 			var cellSize = _width / pizza.Columns;
-			var Brush = new SolidBrush(GetRandomColor());
+			_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
+			var color = GetRandomColor();
+			//writeMessage($"{color.R} {color.G} {color.B}");
+			var Brush = new SolidBrush(color);
+		
 			_graphics.FillRectangle(Brush, slice.C0*cellSize, slice.R0*cellSize, slice.C1 * cellSize, slice.R1 * cellSize);
 		}
 
