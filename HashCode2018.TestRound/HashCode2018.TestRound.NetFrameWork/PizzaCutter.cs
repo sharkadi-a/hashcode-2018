@@ -48,8 +48,8 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 					var lookup = _pizza.PeekCell(currentRow, currentColumn);
 			        if (lookup.Ingridient == Slice.OutOfBound || _cuttedOutPices[currentRow][currentColumn]) break;
-			        if (lookup.Ingridient == 'T') tomatoes++;
-			        if (lookup.Ingridient == 'M') mushrooms++;
+			        if (lookup.Ingridient == Pizza.Tomato) tomatoes++;
+			        if (lookup.Ingridient == Pizza.Mushroom) mushrooms++;
 		        }
 		        if (mushrooms >= minIngridientCount && tomatoes >= minIngridientCount)
 		        {

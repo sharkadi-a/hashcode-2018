@@ -13,6 +13,8 @@ namespace HashCode2018.TestRound.NetFrameWork
         private readonly int _columns;
 
         public const char OutOfBound = '?';
+	    public const char Tomato = 'T';
+	    public const char Mushroom = 'M';
         
         public int R0 { get; private set; }
         public int R1 { get; private set; }
