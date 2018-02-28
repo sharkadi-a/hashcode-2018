@@ -1,14 +1,29 @@
-﻿namespace HashCode2018.TestRound
+﻿using System.Collections.Generic;
+
+namespace HashCode2018.TestRound
 {
 	struct Rectangle
 	{
 		public readonly int Heigth;
 		public readonly int Width;
-
-		public Rectangle(int heigth, int width)
+		public readonly CellOffset[] CellsOffsets;
+		public Rectangle(int heigth, int width, CellOffset[] cellsOffsets)
 		{
 			Heigth = heigth;
 			Width = width;
+			CellsOffsets = cellsOffsets;
+		}
+	}
+
+	struct CellOffset
+	{
+		public readonly int x;
+		public readonly int y;
+
+		public CellOffset(int x, int y)
+		{
+			this.x = x;
+			this.y = y;
 		}
 	}
 }
