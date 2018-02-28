@@ -23,10 +23,16 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	    private bool IsAlreadyCutted(SliceCell sliceCell)
 	    {
-		    return _cuttedOutPices[sliceCell.Row][sliceCell.Column];
+		    return IsAlreadyCutted(sliceCell.Row, sliceCell.Column);
 	    }
 
-	    private Slice CutOut(int startRow, int startColumn, Rectangle rectangle)
+	    private bool IsAlreadyCutted(int row, int column)
+	    {
+		    return _cuttedOutPices[row][column];
+		}
+
+
+		private Slice CutOut(int startRow, int startColumn, Rectangle rectangle)
 	    {
 		    foreach (var offset in rectangle.CellsOffsets)
 		    {
@@ -47,7 +53,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			        var currentColumn = startColumn + offset.x;
 
 					var lookup = _pizza.PeekCell(currentRow, currentColumn);
-			        if (lookup.Ingridient == Slice.OutOfBound || _cuttedOutPices[currentRow][currentColumn]) break;
+			        if (lookup.Ingridient == Slice.OutOfBound || IsAlreadyCutted(currentRow, currentColumn)) break;
 			        if (lookup.Ingridient == Pizza.Tomato) tomatoes++;
 			        if (lookup.Ingridient == Pizza.Mushroom) mushrooms++;
 		        }
@@ -74,6 +80,7 @@ namespace HashCode2018.TestRound.NetFrameWork
                 if (slice != null)
                 {
 	                _callback?.Invoke(new View(_pizza, _cuttedOutPices, slice));
+	                _writeLog($"Slice: {slice}");
 	                yield return slice;
                 }
             }
@@ -97,6 +104,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
 	    {
+		    _writeLog($"Begin solving input file {inputFile}");
 		    var outputFile = inputFile.GetOutputFile();
 		    int lineCount = 0, minIngridients = 0, maxCellsPerSlice = 0;
 		    var dataLines = new List<string>();
@@ -113,7 +121,9 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 				    _pizza = new Pizza(rows, columns);
 					InitPizza();
-				}
+				    _writeLog(
+					    $"Pizza creted, rows: {rows}, columns:{columns}, min ingridients: {minIngridients}, max cells per slice: {maxCellsPerSlice}");
+			    }
 			    else
 			    {
 					dataLines.Add(inputLine);
@@ -122,6 +132,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 		    }
 
 			_pizza.Fill(dataLines);
+		    _writeLog($"Pizza filled, total lines: {dataLines.Count}");
 
 		    var solution = Cut(minIngridients, maxCellsPerSlice).ToArray();
 			outputFile.AppendLineNumbers(solution.Length);
@@ -130,6 +141,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			    outputFile.AppendLineNumbers(slice.R0, slice.R1, slice.C0, slice.C1);
 		    }
 
+		    _writeLog($"Output written to {outputFile}");
 		    return outputFile;
 	    }
     }
