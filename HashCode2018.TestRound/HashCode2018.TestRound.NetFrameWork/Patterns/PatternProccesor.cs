@@ -37,7 +37,7 @@ namespace HashCode2018.TestRound.NetFrameWork.Patterns
 
 	    private static void ProccessSize(int size, List<Rectangle> rectangles)
 	    {
-		    for (var i = 1; i <= size; i++)
+		    for (var i = 1; i < size; i++)
 		    {
 			    if (size % i == 0)
 			    {
@@ -52,9 +52,9 @@ namespace HashCode2018.TestRound.NetFrameWork.Patterns
 		    var height = size / width;
 
 		    var cells = new List<CellOffset>();
-		    for (var x = 1; x <= width; x++)
+		    for (var x = 0; x < width; x++)
 		    {
-			    for (var y = 1; y <= height; y++)
+			    for (var y = 0; y < height; y++)
 			    {
 				    var newCell = new CellOffset(x, y);
 				    cells.Add(newCell);
