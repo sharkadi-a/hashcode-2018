@@ -99,7 +99,7 @@ namespace HashCode2018.TestRound.NetFrameWork
                     sb.Append(column);
                 }
 
-                sb.Append("\n");
+                sb.Append("\r\n");
             }
 
             return sb.ToString();
