@@ -23,7 +23,7 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			var pizza = view.Pizza;
 			var slice = view.NewSlice;
 			int cellSize;
-			//Thread.Sleep(1000);
+			
 			if (_width / pizza.Columns < _height / pizza.Rows)
 			{
 				cellSize = _width / pizza.Columns;
@@ -32,13 +32,19 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			{
 				cellSize = _height / pizza.Rows;
 			}
-			writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
+			//writeMessage($"{cellSize}");
+			//writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
 			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
 			var color = GetRandomColor();
 			//writeMessage($"{color.R} {color.G} {color.B}");
 			var Brush = new SolidBrush(color);
-		
-			_graphics.FillRectangle(Brush, slice.C0*cellSize, slice.R0*cellSize, slice.C1 * cellSize, slice.R1 * cellSize);
+			var x0Graph = slice.C0 * cellSize;
+			var y0Graph = slice.R0 * cellSize;
+			var xGraph = slice.C1 * cellSize;
+			var yGraph = slice.R1 * cellSize;
+			_graphics.FillRectangle(Brush, x0Graph, y0Graph, xGraph - x0Graph, yGraph - y0Graph);
+			//writeMessage($"{x0Graph}:{y0Graph} {xGraph}:{yGraph}");
+			//Thread.Sleep(1000);
 		}
 
 		private Color GetRandomColor()
