@@ -7,13 +7,13 @@ using HashCode2018.QualificationRound.WinForm.Properties;
 
 namespace HashCode2018.QualificationRound.WinForm
 {
-	static class Program
+	internal static class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main()
+		private static void Main()
 		{
 			Settings.Default.Reload();
 			Application.EnableVisualStyles();

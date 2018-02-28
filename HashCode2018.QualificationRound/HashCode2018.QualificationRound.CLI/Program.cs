@@ -4,14 +4,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using HashCode2018.QualificationRound.Core;
 
 namespace HashCode2018.QualificationRound.CLI
 {
-    class Program
+	internal class Program
     {
-        static void Main(string[] args)
+	    private static void Main(string[] args)
         {
             Console.WriteLine("FABULOUS CODERS Qualification Round Problem Solution");
 
@@ -30,7 +31,7 @@ namespace HashCode2018.QualificationRound.CLI
             Console.WriteLine("Total input files: {0}", files.Length);
             Console.WriteLine("Starting at: {0}", DateTime.Now);
 
-            var problemSolver = new ProblemSolver();
+            var problemSolver = new TestProblemSolver();
             problemSolver.SetLogOutput(Console.WriteLine);
 
             var sw = Stopwatch.StartNew();
@@ -46,11 +47,11 @@ namespace HashCode2018.QualificationRound.CLI
             Console.Read();
         }
 
-        static void ProcessFile(InputFile inputFile, IProblemSolver problemSolver)
+	    private static void ProcessFile(InputFile inputFile, IProblemSolver problemSolver)
         {
             Console.WriteLine("Solving {0}...", inputFile);
             var sw = Stopwatch.StartNew();
-            using (var outputFile = problemSolver.Solve(inputFile))
+            using (var outputFile = problemSolver.Solve(inputFile, CancellationToken.None))
             {
                 Console.WriteLine("Input file solved and saved into: {0}", outputFile);
                 Console.WriteLine("Time elapsed for this input: {0}", sw.Elapsed);

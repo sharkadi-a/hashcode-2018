@@ -82,5 +82,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashCode2018.QualificationRound.Core\HashCode2018.QualificationRound.Core.csproj">
+      <Project>{7578586B-08A5-4809-BCB7-5909AAA664E4}</Project>
+      <Name>HashCode2018.QualificationRound.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HashCode2018.QualificationRound\HashCode2018.QualificationRound.csproj">
+      <Project>{30707819-6807-4F9B-9552-79595CF33163}</Project>
+      <Name>HashCode2018.QualificationRound</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

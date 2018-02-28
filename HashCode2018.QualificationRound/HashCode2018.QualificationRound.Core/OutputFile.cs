@@ -28,14 +28,16 @@ namespace HashCode2018.QualificationRound.Core
             _sw.Value.WriteLine(value);
         }
 
-        public void AppendLineNumbers(IEnumerable<int> numbers)
+        public void AppendLineNumbers(params int[] numbers)
         {
-            foreach (var number in numbers)
-            {
-                _sw.Value.Write(number);
-                _sw.Value.Write(' ');
-            }
-            _sw.Value.Write(_sw.Value.NewLine);
+	        for (var index = 0; index < numbers.Length; index++)
+	        {
+		        var number = numbers[index];
+		        _sw.Value.Write(number);
+		        if (index < numbers.Length - 1) _sw.Value.Write(' ');
+	        }
+
+	        _sw.Value.Write(_sw.Value.NewLine);
         }
 
         public void Dispose()
