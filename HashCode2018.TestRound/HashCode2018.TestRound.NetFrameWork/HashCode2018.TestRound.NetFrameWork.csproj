@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleRenderer.cs" />
-    <Compile Include="IRenderer.cs" />
     <Compile Include="Patterns\PatternProccesor.cs" />
     <Compile Include="Patterns\Rectangle.cs" />
     <Compile Include="Pizza.cs" />
@@ -51,6 +49,7 @@
     <Compile Include="Slice.cs" />
     <Compile Include="SliceCell.cs" />
     <Compile Include="SliceCellEnumerator.cs" />
+    <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="example.in">

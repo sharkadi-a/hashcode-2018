@@ -5,7 +5,7 @@ using HashCode2018.Core;
 using HashCode2018.TestRound.NetFrameWork;
 using HashCode2018.TestRound.WinForm.Drawing;
 using HashCode2018.TestRound.WinForm.Properties;
-using View = HashCode2018.TestRound.WinForm.Drawing.View;
+using View = HashCode2018.TestRound.NetFrameWork.View;
 
 namespace HashCode2018.TestRound.WinForm
 {

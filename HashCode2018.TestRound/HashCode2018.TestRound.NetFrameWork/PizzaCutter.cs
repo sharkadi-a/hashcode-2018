@@ -11,7 +11,7 @@ namespace HashCode2018.TestRound.NetFrameWork
     {
         private Pizza _pizza;
         private bool[][] _cuttedOutPices;
-	    private Action<char[][]> _callback;
+	    private Action<View> _callback;
 	    private Action<string> _writeLog;
 
 		void InitPizza()
@@ -64,7 +64,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	    public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
 	    {
-		    if (typeof(TData) != typeof(char[][])) throw new Exception();
+		    if (typeof(TData) != typeof(View)) throw new Exception();
 		    _callback = c => callback(c as TData);
 	    }
 

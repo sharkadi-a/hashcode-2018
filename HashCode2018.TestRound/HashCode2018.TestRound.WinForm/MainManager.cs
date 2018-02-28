@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using HashCode2018.Core;
+using HashCode2018.TestRound.NetFrameWork;
 using HashCode2018.TestRound.WinForm.Drawing;
 using HashCode2018.TestRound.WinForm.Proccess;
 

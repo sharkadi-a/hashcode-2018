@@ -19,7 +19,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	        IProblemSolver problemSolver = new PizzaCutter();
 			problemSolver.SetLogOutput(Console.WriteLine);
-			problemSolver.SetIterationCallback<char[][]>(c => Console.WriteLine(c));
+			problemSolver.SetIterationCallback<View>(c => Console.WriteLine(c));
 
 			Run(InputFile.GetInputFiles(Helpers.GetWorkingDirectoryInfo().FullName), problemSolver);
 	        Console.ReadLine();

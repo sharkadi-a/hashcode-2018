@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using HashCode2018.TestRound.NetFrameWork;
 
 namespace HashCode2018.TestRound.WinForm.Drawing
 {
