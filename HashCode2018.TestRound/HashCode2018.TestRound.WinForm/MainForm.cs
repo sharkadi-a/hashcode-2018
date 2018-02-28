@@ -15,7 +15,7 @@ namespace HashCode2018.TestRound.WinForm
 			InitializeComponent();
 		}
 
-		private readonly MainManager _manager = new MainManager();
+		private readonly MainManager _manager = new MainManager(null);
 		private delegate void UpdateTextBox(string message);
 		private delegate void UpdatePanel(View view);
 		private void MainForm_Load(object sender, EventArgs e)
