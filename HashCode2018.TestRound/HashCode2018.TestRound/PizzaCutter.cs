@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using HashCode2018.Core;
+using HashCode2018.TestRound.Patterns;
 
 namespace HashCode2018.TestRound
 {
@@ -38,7 +39,9 @@ namespace HashCode2018.TestRound
 
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
         {
-	        var patterns = GetPatterns(minIngridientCount, maxCellsPerSliceCount).ToList();
+	        var patternProccessor = new PatternProccesor();
+
+	        var patterns = patternProccessor.GetPatterns(minIngridientCount, maxCellsPerSliceCount).ToList();
 
 			foreach (var cell in _pizza)
             {

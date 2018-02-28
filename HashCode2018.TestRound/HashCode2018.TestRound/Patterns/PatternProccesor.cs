@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRound.Patterns
 {
-	public sealed partial class PizzaCutter
+    class PatternProccesor
     {
-	    // TODO
-	    private IEnumerable<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
+	    public IEnumerable<Rectangle> GetPatterns(int minIngridientCount, int maxCellsPerSliceCount)
 	    {
 		    var minCellsSize = minIngridientCount * 2;
 
@@ -30,9 +28,9 @@ namespace HashCode2018.TestRound
 
 
 
-			return rectangles.OrderBy(Rate);
+		    return rectangles.OrderBy(Rate);
 
-		}
+	    }
 
 	    private int Rate(Rectangle rec)
 	    {
@@ -56,20 +54,20 @@ namespace HashCode2018.TestRound
 	    {
 		    var width = i;
 		    var height = size / width;
-		  
-			var cells = new List<CellOffset>();
+
+		    var cells = new List<CellOffset>();
 		    for (var x = 1; x <= width; x++)
 		    {
-				for (var y = 1; x <= height; x++)
-				{
-					var newCell = new CellOffset(x, y);
-					cells.Add(newCell);
-				}
-			}
+			    for (var y = 1; x <= height; x++)
+			    {
+				    var newCell = new CellOffset(x, y);
+				    cells.Add(newCell);
+			    }
+		    }
 
 		    var readyCells = cells.OrderBy(x => x.x + x.y).ToArray();
-			var newRectangle = new Rectangle(height,width, readyCells);
-			rectangles.Add(newRectangle);
+		    var newRectangle = new Rectangle(height, width, readyCells);
+		    rectangles.Add(newRectangle);
 	    }
-    }
+	}
 }
