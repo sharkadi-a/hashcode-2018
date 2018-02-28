@@ -11,12 +11,9 @@ namespace HashCode2018.TestRound.NetFrameWork.Patterns
 		    var minCellsSize = minIngridientCount * 2;
 
 		    var templateSized = new List<int>();
-		    for (var i = minCellsSize; i < maxCellsPerSliceCount; i++)
+		    for (var i = minCellsSize; i <= maxCellsPerSliceCount; i++)
 		    {
-			    if (i % 2 == 0)
-			    {
-				    templateSized.Add(i);
-			    }
+			    templateSized.Add(i);
 		    }
 
 		    var rectangles = new List<Rectangle>();
@@ -57,7 +54,7 @@ namespace HashCode2018.TestRound.NetFrameWork.Patterns
 		    var cells = new List<CellOffset>();
 		    for (var x = 1; x <= width; x++)
 		    {
-			    for (var y = 1; x <= height; x++)
+			    for (var y = 1; y <= height; y++)
 			    {
 				    var newCell = new CellOffset(x, y);
 				    cells.Add(newCell);
