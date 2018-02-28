@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using HashCode2018.TestRound.NetFrameWork;
 
 namespace HashCode2018.TestRound.WinForm.Drawing
@@ -21,7 +22,16 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 		{
 			var pizza = view.Pizza;
 			var slice = view.NewSlice;
-			var cellSize = _width / pizza.Columns;
+			int cellSize;
+			//Thread.Sleep(1000);
+			if (_width / pizza.Columns < _height / pizza.Rows)
+			{
+				cellSize = _width / pizza.Columns;
+			}
+			else
+			{
+				cellSize = _height / pizza.Rows;
+			}
 			writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
 			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
 			var color = GetRandomColor();
