@@ -53,7 +53,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			        var currentColumn = startColumn + offset.x;
 
 					var lookup = _pizza.PeekCell(currentRow, currentColumn);
-			        if (lookup.Ingridient == Slice.OutOfBound || IsAlreadyCutted(currentRow, currentColumn)) break;
+			        if (lookup.Ingridient == Slice.OutOfBound || IsAlreadyCutted(currentRow, currentColumn)) goto brk;
 			        if (lookup.Ingridient == Pizza.Tomato) tomatoes++;
 			        if (lookup.Ingridient == Pizza.Mushroom) mushrooms++;
 		        }
@@ -61,6 +61,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 		        {
 			        return CutOut(startRow, startColumn, rectangle);
 		        }
+				brk:;
 			}
 
 	        return null;
@@ -81,7 +82,7 @@ namespace HashCode2018.TestRound.NetFrameWork
                 if (slice != null)
                 {
 	                _callback?.Invoke(new View(_pizza, _cuttedOutPices, slice));
-	                _writeLog($"Slice ({slice.C0}-{slice.R0};{slice.C1}-{slice.R1}): \r\n{slice}");
+	                _writeLog($"Slice (C0:{slice.C0}-R0:{slice.R0};C1:{slice.C1}-R1:{slice.R1}): \r\n{slice}");
 	                yield return slice;
                 }
             }
