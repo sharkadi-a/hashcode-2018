@@ -34,7 +34,7 @@ namespace HashCode2018.TestRound.WinForm
 		private void UpdatePanelMethod(View view)
 		{
 			var graph = ChartPanel.CreateGraphics();
-			var drawer = new Drawer(graph);
+			var drawer = new Drawer(graph, ChartPanel.Width, ChartPanel.Height);
 			drawer.Start(view);
 			
 		}
