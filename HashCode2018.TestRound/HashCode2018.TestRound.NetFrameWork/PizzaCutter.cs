@@ -140,7 +140,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			outputFile.AppendLineNumbers(solution.Length);
 		    foreach (var slice in solution)
 		    {
-			    outputFile.AppendLineNumbers(slice.R0, slice.R1, slice.C0, slice.C1);
+			    outputFile.AppendLineNumbers(slice.R0, slice.C0, slice.R1, slice.C1);
 		    }
 
 		    _writeLog($"Output written to {outputFile}");
