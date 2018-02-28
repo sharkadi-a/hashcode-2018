@@ -17,7 +17,6 @@ namespace HashCode2018.TestRound
 			    if (i % 2 == 0)
 			    {
 				    templateSized.Add(i);
-
 			    }
 		    }
 

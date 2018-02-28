@@ -4,7 +4,7 @@
 	{
 		public readonly int Heigth;
 		public readonly int Width;
-
+		
 		public Rectangle(int heigth, int width)
 		{
 			Heigth = heigth;
