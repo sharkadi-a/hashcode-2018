@@ -9,6 +9,14 @@
     <None Remove="HashCode2018.TestRound.WinForm\**" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="example.out" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\HashCode2018.Core\HashCode2018.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="example.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

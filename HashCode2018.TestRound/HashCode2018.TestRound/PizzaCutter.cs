@@ -8,14 +8,13 @@ namespace HashCode2018.TestRound
 {
     public sealed partial class PizzaCutter : IProblemSolver
     {
-        private readonly Pizza _pizza;
-        private readonly IRenderer _renderer;
+        private Pizza _pizza;
         private bool[][] _cuttedOutPices;
+	    private Action<char[][]> _callback;
+	    private Action<string> _writeLog;
 
-        public PizzaCutter(Pizza pizza, IRenderer renderer)
+		void InitPizza()
         {
-            _pizza = pizza;
-            _renderer = renderer;
             _cuttedOutPices = new bool[_pizza.Rows][];
             for (var index = 0; index < _cuttedOutPices.Length; index++)
                 _cuttedOutPices[index] = new bool[_pizza.Columns];
@@ -49,31 +48,64 @@ namespace HashCode2018.TestRound
 	            var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, patterns);
                 if (slice != null)
                 {
-                    //_renderer.Render(???);
+                    //_callback?()
                     yield return slice;
                 }
             }
         }
 
-	    public IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
+	    private IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
         {
             return CutPizza(minIngridientCount, maxCellsPerSliceCount);
         }
 
 	    public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
 	    {
-			// TODO:
+		    if (typeof(TData) != typeof(char[][])) throw new Exception();
+		    _callback = c => callback(c as TData);
 	    }
 
 	    public void SetLogOutput(Action<string> writeLogAction)
 	    {
-			// TODO:
+		    _writeLog = writeLogAction;
 	    }
 
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
 	    {
-		    // TODO:
-		    throw new NotImplementedException();
+		    var outputFile = inputFile.GetOutputFile();
+		    int lineCount = 0, minIngridients = 0, maxCellsPerSlice = 0;
+		    var dataLines = new List<string>();
+			
+			foreach (var inputLine in inputFile.ReadStrings())
+		    {
+			    if (lineCount == 0)
+			    {
+				    var parameters = inputLine.Split(' ');
+				    var rows = int.Parse(parameters[0]);
+				    var columns = int.Parse(parameters[1]);
+				    minIngridients = int.Parse(parameters[2]);
+				    maxCellsPerSlice = int.Parse(parameters[3]);
+
+				    _pizza = new Pizza(rows, columns);
+					InitPizza();
+				}
+			    else
+			    {
+					dataLines.Add(inputLine);
+			    }
+			    lineCount++;
+		    }
+
+			_pizza.Fill(dataLines);
+
+		    var solution = Cut(minIngridients, maxCellsPerSlice).ToArray();
+			outputFile.AppendLineNumbers(solution.Length);
+		    foreach (var slice in solution)
+		    {
+			    outputFile.AppendLineNumbers(slice.R0, slice.R1, slice.C0, slice.C1);
+		    }
+
+		    return outputFile;
 	    }
     }
 }

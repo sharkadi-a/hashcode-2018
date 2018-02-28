@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using HashCode2018.Core;
 
 namespace HashCode2018.TestRound
 {
     internal class Program
     {
+	    private static readonly CancellationTokenSource CancellationTokenSource = new CancellationTokenSource();
+
         public static void Main(string[] args)
         {
             //if (args.Length == 0)
@@ -15,8 +19,12 @@ namespace HashCode2018.TestRound
             //    Test();
             //    return;
             //}
-            
-            Run(new [] {new FileInfo("D:\\small.in")});
+
+	        IProblemSolver problemSolver = new PizzaCutter();
+			problemSolver.SetLogOutput(Console.WriteLine);
+			problemSolver.SetIterationCallback<char[][]>(c => Console.WriteLine(c));
+
+			Run(InputFile.GetInputFiles(Helpers.GetWorkingDirectoryInfo().FullName), problemSolver);
 	        Console.ReadLine();
         }
 
@@ -56,34 +64,14 @@ namespace HashCode2018.TestRound
             Console.Read();
         }
 
-        private static void Run(IEnumerable<FileInfo> fileInfos)
+        private static void Run(IEnumerable<InputFile> inputFiles, IProblemSolver problemSolver)
         {
-            foreach (var fileInfo in fileInfos)
+            foreach (var inputFile in inputFiles)
             {
-                if (!fileInfo.Exists) throw new FileNotFoundException("Input file not found", fileInfo.FullName);
-
-                var lines = File.ReadAllLines(fileInfo.FullName);
-                var parameters = lines[0].Split(' ');
-                var rows = int.Parse(parameters[0]);
-                var columns = int.Parse(parameters[1]);
-                var minIngridients = int.Parse(parameters[2]);
-                var maxCellsPerSlice = int.Parse(parameters[3]);
-                
-                var pizza = new Pizza(rows, columns);
-                pizza.Fill(lines.Skip(1));
-                
-                var pizzaCutter = new PizzaCutter(pizza, new ConsoleRenderer());
-                var slices = pizzaCutter.Cut(minIngridients, maxCellsPerSlice).ToArray();
-
-                var output = new StringBuilder(slices.Length * 5);
-                output.AppendFormat("{0}\n", slices.Length);
-                foreach (var slice in slices)
-                    output.AppendFormat("{0}\n", slice.GetNumbers());
-
-                var outputDirectory = fileInfo.DirectoryName;
-                var outputFilename = fileInfo.Name.Replace(fileInfo.Extension, string.Empty) + ".out";
-                var outputFullname = Path.Combine(outputDirectory, outputFilename);
-                File.WriteAllText(outputFullname, output.ToString());
+	            using (var outputFile = problemSolver.Solve(inputFile, CancellationTokenSource.Token))
+	            {
+					Console.WriteLine($"File {inputFile} solved.");
+	            }
             }
         }
     }
