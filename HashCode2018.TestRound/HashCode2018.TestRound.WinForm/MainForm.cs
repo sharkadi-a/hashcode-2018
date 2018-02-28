@@ -70,5 +70,13 @@ namespace HashCode2018.TestRound.WinForm
 		{
 			_manager.Stop();
 		}
+
+		private void chkNoDraw_CheckedChanged(object sender, EventArgs e)
+		{
+			if (chkNoDraw.Checked)
+			{
+
+			}
+		}
 	}
 }

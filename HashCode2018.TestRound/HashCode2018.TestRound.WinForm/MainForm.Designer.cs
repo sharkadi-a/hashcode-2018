@@ -35,6 +35,7 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.StopBtn = new System.Windows.Forms.Button();
 			this.PathTBx = new System.Windows.Forms.TextBox();
+			this.chkNoDraw = new System.Windows.Forms.CheckBox();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -64,10 +65,11 @@
 			this.ResultTBx.Location = new System.Drawing.Point(0, 83);
 			this.ResultTBx.Multiline = true;
 			this.ResultTBx.Name = "ResultTBx";
+			this.ResultTBx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.ResultTBx.Size = new System.Drawing.Size(371, 600);
 			this.ResultTBx.TabIndex = 3;
 			// 
-			// panel1
+			// ChartPanel
 			// 
 			this.ChartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ChartPanel.Location = new System.Drawing.Point(371, 0);
@@ -77,6 +79,7 @@
 			// 
 			// panel2
 			// 
+			this.panel2.Controls.Add(this.chkNoDraw);
 			this.panel2.Controls.Add(this.StopBtn);
 			this.panel2.Controls.Add(this.PathTBx);
 			this.panel2.Controls.Add(this.BrowseBtn);
@@ -106,6 +109,17 @@
 			this.PathTBx.TabIndex = 0;
 			this.PathTBx.Text = global::HashCode2018.TestRound.WinForm.Properties.Settings.Default.LastFilePath;
 			// 
+			// chkNoDraw
+			// 
+			this.chkNoDraw.AutoSize = true;
+			this.chkNoDraw.Location = new System.Drawing.Point(266, 39);
+			this.chkNoDraw.Name = "chkNoDraw";
+			this.chkNoDraw.Size = new System.Drawing.Size(80, 17);
+			this.chkNoDraw.TabIndex = 5;
+			this.chkNoDraw.Text = "No drawing";
+			this.chkNoDraw.UseVisualStyleBackColor = true;
+			this.chkNoDraw.CheckedChanged += new System.EventHandler(this.chkNoDraw_CheckedChanged);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +145,7 @@
 		private System.Windows.Forms.Panel ChartPanel;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button StopBtn;
+		private System.Windows.Forms.CheckBox chkNoDraw;
 	}
 }
 

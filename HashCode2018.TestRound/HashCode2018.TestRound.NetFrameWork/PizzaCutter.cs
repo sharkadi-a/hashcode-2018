@@ -39,7 +39,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			    _cuttedOutPices[startRow + offset.y][startColumn + offset.x] = true;
 		    }
 
-		    return _pizza.Cut(startRow, startRow + rectangle.Heigth, startColumn, startColumn + rectangle.Width);
+		    return _pizza.Cut(startRow, startRow + rectangle.Heigth - 1, startColumn, startColumn + rectangle.Width - 1);
 	    }
 
         private Slice CrawlForSlice(int startRow, int startColumn, int minIngridientCount, IList<Rectangle> rectangles)
@@ -66,13 +66,14 @@ namespace HashCode2018.TestRound.NetFrameWork
 	        return null;
         }
 		
-        private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
+        private IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount, CancellationToken cancellationToken)
         {
 	        var patternProccessor = new PatternProccesor();
 	        var patterns = patternProccessor.GetPatterns(minIngridientCount, maxCellsPerSliceCount).ToList();
 
 			foreach (var cell in _pizza)
-            {
+			{
+				if (cancellationToken.IsCancellationRequested) break;
 	            if (IsAlreadyCutted(cell))
 		            continue;
 
@@ -80,16 +81,16 @@ namespace HashCode2018.TestRound.NetFrameWork
                 if (slice != null)
                 {
 	                _callback?.Invoke(new View(_pizza, _cuttedOutPices, slice));
-	                _writeLog($"Slice: {slice}");
+	                _writeLog($"Slice ({slice.C0}-{slice.R0};{slice.C1}-{slice.R1}): \r\n{slice}");
 	                yield return slice;
                 }
             }
         }
 
-	    private IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
-        {
-            return CutPizza(minIngridientCount, maxCellsPerSliceCount);
-        }
+	    //private IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
+     //   {
+     //       return CutPizza(minIngridientCount, maxCellsPerSliceCount);
+     //   }
 
 	    public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
 	    {
@@ -134,7 +135,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			_pizza.Fill(dataLines);
 		    _writeLog($"Pizza filled, total lines: {dataLines.Count}");
 
-		    var solution = Cut(minIngridients, maxCellsPerSlice).ToArray();
+		    var solution = Cut(minIngridients, maxCellsPerSlice, cancellationToken).ToArray();
 			outputFile.AppendLineNumbers(solution.Length);
 		    foreach (var slice in solution)
 		    {

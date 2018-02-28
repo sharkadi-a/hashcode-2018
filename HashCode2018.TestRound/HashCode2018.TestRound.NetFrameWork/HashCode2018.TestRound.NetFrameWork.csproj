@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5563260D-8A7F-4E91-847D-4B1676DD44DB}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HashCode2018.TestRound.NetFrameWork</RootNamespace>
     <AssemblyName>HashCode2018.TestRound.NetFrameWork</AssemblyName>
@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="example.in">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="medium.in">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

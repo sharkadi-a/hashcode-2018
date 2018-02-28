@@ -18,8 +18,8 @@ namespace HashCode2018.TestRound.NetFrameWork
             //}
 
 	        IProblemSolver problemSolver = new PizzaCutter();
-			problemSolver.SetLogOutput(Console.WriteLine);
-			problemSolver.SetIterationCallback<View>(c => Console.WriteLine(c));
+			problemSolver.SetLogOutput(s => {});
+			//problemSolver.SetIterationCallback<View>(Console.WriteLine);
 
 			Run(InputFile.GetInputFiles(Helpers.GetWorkingDirectoryInfo().FullName), problemSolver);
 	        Console.ReadLine();
