@@ -8,7 +8,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace HashCode2018.QualificationRound.WinForm.Drawing
 {
-	class Drawer
+	internal class Drawer
 	{
 		private readonly Graphics _graphics;
 

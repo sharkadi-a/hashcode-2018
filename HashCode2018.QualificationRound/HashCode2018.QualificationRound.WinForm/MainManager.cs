@@ -5,35 +5,39 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using HashCode2018.Core;
 using HashCode2018.QualificationRound.WinForm.Drawing;
 using HashCode2018.QualificationRound.WinForm.Proccess;
 
 namespace HashCode2018.QualificationRound.WinForm
 {
-	class MainManager
+	internal class MainManager
 	{
+		private readonly IProblemSolver _problemSolver;
 		public event EventHandler<string> MessageReady;
 		public event EventHandler<View> ViewReady;
-		private readonly CancellationTokenSource _tokenSource = new CancellationTokenSource();
+		private CancellationTokenSource _tokenSource = new CancellationTokenSource();
 		private readonly MainProccess _proccess = new MainProccess();
 
-		public MainManager()
+		public MainManager(IProblemSolver problemSolver)
 		{
-			_proccess.MessageWrite = OnMessageReady;
-			_proccess.ViewReady = OnViewReady;
+			_problemSolver = problemSolver ?? throw new ArgumentNullException(nameof(problemSolver));
+			_problemSolver.SetIterationCallback<View>(OnViewReady);
+			_problemSolver.SetLogOutput(OnMessageReady);
 		}
 
-		public void Start(string[] lines)
+		public void Start(InputFile inputFile)
 		{
 			OnMessageReady("Start proccess");
 			var token = _tokenSource.Token;
-			Task.Factory.StartNew(() => _proccess.Start(lines, token), token);
+			_proccess.Start(_problemSolver, inputFile, token);
 			OnMessageReady("Procces started");
 		}
 
 		public void Stop()
 		{
 			_tokenSource.Cancel();
+			_tokenSource = new CancellationTokenSource();
 		}
 
 		

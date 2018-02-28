@@ -3,4 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashCode2018.Core\HashCode2018.Core.csproj" />
+  </ItemGroup>
 </Project>

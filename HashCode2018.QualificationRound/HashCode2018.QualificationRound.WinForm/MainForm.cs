@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HashCode2018.Core;
 using HashCode2018.QualificationRound.WinForm.Drawing;
 using HashCode2018.QualificationRound.WinForm.Properties;
 using View = HashCode2018.QualificationRound.WinForm.Drawing.View;
@@ -21,7 +22,7 @@ namespace HashCode2018.QualificationRound.WinForm
 			InitializeComponent();
 		}
 
-		readonly MainManager _manager = new MainManager();
+		private readonly MainManager _manager = new MainManager(new TestProblemSolver());
 		private delegate void UpdateTextBox(string message);
 		private delegate void UpdatePanel(View view);
 		private void MainForm_Load(object sender, EventArgs e)
@@ -67,8 +68,8 @@ namespace HashCode2018.QualificationRound.WinForm
 
 		private void StartBtn_Click(object sender, EventArgs e)
 		{
-			var lines = File.ReadAllLines(PathTBx.Text);
-			_manager.Start(lines);
+			var inputFile = new InputFile(new FileInfo(PathTBx.Text));
+			_manager.Start(inputFile);
 		}
 
 		private void StopBtn_Click(object sender, EventArgs e)
