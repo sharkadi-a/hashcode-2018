@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace HashCode2018.TestRound.Patterns
+namespace HashCode2018.TestRound.NetFrameWork.Patterns
 {
     class PatternProccesor
     {

@@ -89,9 +89,9 @@
       <Project>{ED67C43D-DBA2-471C-8280-A872BC4E461D}</Project>
       <Name>HashCode2018.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HashCode2018.QualificationRound\HashCode2018.QualificationRound.csproj">
-      <Project>{30707819-6807-4F9B-9552-79595CF33163}</Project>
-      <Name>HashCode2018.QualificationRound</Name>
+    <ProjectReference Include="..\HashCode2018.TestRound.NetFrameWork\HashCode2018.TestRound.NetFrameWork.csproj">
+      <Project>{5563260D-8A7F-4E91-847D-4B1676DD44DB}</Project>
+      <Name>HashCode2018.TestRound.NetFrameWork</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

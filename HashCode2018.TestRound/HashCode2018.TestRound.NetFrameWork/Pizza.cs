@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRound.NetFrameWork
 {
     public sealed class Pizza: Slice
     {

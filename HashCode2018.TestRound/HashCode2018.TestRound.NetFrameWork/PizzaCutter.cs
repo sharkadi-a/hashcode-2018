@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using HashCode2018.Core;
-using HashCode2018.TestRound.Patterns;
+using HashCode2018.TestRound.NetFrameWork.Patterns;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRound.NetFrameWork
 {
-    public sealed partial class PizzaCutter : IProblemSolver
+    public sealed class PizzaCutter : IProblemSolver
     {
         private Pizza _pizza;
         private bool[][] _cuttedOutPices;

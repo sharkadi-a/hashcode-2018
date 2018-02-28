@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using HashCode2018.Core;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRound.NetFrameWork
 {
     internal class Program
     {

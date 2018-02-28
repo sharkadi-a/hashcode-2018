@@ -1,4 +1,4 @@
-﻿namespace HashCode2018.TestRound.Patterns
+﻿namespace HashCode2018.TestRound.NetFrameWork.Patterns
 {
 	struct Rectangle
 	{

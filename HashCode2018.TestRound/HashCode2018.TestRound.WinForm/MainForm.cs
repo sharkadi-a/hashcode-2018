@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using HashCode2018.Core;
+using HashCode2018.TestRound.NetFrameWork;
 using HashCode2018.TestRound.WinForm.Drawing;
 using HashCode2018.TestRound.WinForm.Properties;
 using View = HashCode2018.TestRound.WinForm.Drawing.View;
@@ -15,7 +16,7 @@ namespace HashCode2018.TestRound.WinForm
 			InitializeComponent();
 		}
 
-		private readonly MainManager _manager = new MainManager(null);
+		private readonly MainManager _manager = new MainManager(new PizzaCutter());
 		private delegate void UpdateTextBox(string message);
 		private delegate void UpdatePanel(View view);
 		private void MainForm_Load(object sender, EventArgs e)

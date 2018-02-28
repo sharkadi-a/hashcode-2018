@@ -1,4 +1,4 @@
-﻿namespace HashCode2018.TestRound
+﻿namespace HashCode2018.TestRound.NetFrameWork
 {
     public class ConsoleRenderer: IRenderer
     {

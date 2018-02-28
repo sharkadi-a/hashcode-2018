@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HashCode2018.TestRound
+namespace HashCode2018.TestRound.NetFrameWork
 {
     public class Slice: IEquatable<Slice>, IEnumerable<SliceCell>
     {
