@@ -2,7 +2,15 @@
 {
 	public class View
 	{
-		public Pizza Pizza { get; set; }
-		public bool[][] CuttedOutPicies { get; set; }
+		public View(Pizza pizza, bool[][] cuttedOutPicies, Slice newSlice)
+		{
+			Pizza = pizza;
+			CuttedOutPicies = cuttedOutPicies;
+			NewSlice = newSlice;
+		}
+
+		public Pizza Pizza { get; }
+		public bool[][] CuttedOutPicies { get; }
+		public Slice NewSlice { get; }
 	}
 }

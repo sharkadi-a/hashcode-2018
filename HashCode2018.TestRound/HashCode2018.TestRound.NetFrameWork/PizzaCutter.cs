@@ -43,8 +43,11 @@ namespace HashCode2018.TestRound.NetFrameWork
 		        int mushrooms = 0, tomatoes = 0;
 		        foreach (var offset in rectangle.CellsOffsets)
 		        {
-			        var lookup = _pizza.PeekCell(startRow + offset.y, startColumn + offset.x);
-			        if (lookup.Ingridient == Slice.OutOfBound) break;
+			        var currentRow = startRow + offset.y;
+			        var currentColumn = startColumn + offset.x;
+
+					var lookup = _pizza.PeekCell(currentRow, currentColumn);
+			        if (lookup.Ingridient == Slice.OutOfBound || _cuttedOutPices[currentRow][currentColumn]) break;
 			        if (lookup.Ingridient == 'T') tomatoes++;
 			        if (lookup.Ingridient == 'M') mushrooms++;
 		        }
@@ -56,12 +59,10 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	        return null;
         }
-
-
+		
         private IEnumerable<Slice> CutPizza(int minIngridientCount, int maxCellsPerSliceCount)
         {
 	        var patternProccessor = new PatternProccesor();
-
 	        var patterns = patternProccessor.GetPatterns(minIngridientCount, maxCellsPerSliceCount).ToList();
 
 			foreach (var cell in _pizza)
@@ -72,8 +73,8 @@ namespace HashCode2018.TestRound.NetFrameWork
 	            var slice = CrawlForSlice(cell.Row, cell.Column, minIngridientCount, patterns);
                 if (slice != null)
                 {
-                    //_callback?()
-                    yield return slice;
+	                _callback?.Invoke(new View(_pizza, _cuttedOutPices, slice));
+	                yield return slice;
                 }
             }
         }
