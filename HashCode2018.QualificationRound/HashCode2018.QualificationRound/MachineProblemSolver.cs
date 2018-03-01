@@ -26,12 +26,31 @@ namespace HashCode2018.QualificationRound
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
         {
 	        var outputFile = inputFile.GetOutputFile();
-
-			foreach (var value in inputFile.ReadStrings())
+	        int c = 0;
+	        var model = new InputFileModel();
+	        foreach (var value in inputFile.ReadStrings())
 	        {
-		        _writeLog("Processing value " + value);
-		        var ints = InputParser.Map4(value);
-				outputFile.AppendLineNumbers(ints.Item1, ints.Item2, ints.Item3, ints.Item4);
+		        var input = InputParser.Map6(value);
+		        if (c == 0)
+		        {
+			        model.Rows = input.Item1;
+			        model.Columns = input.Item2;
+			        model.Vechiles = input.Item3;
+			        model.Riders = input.Item4;
+			        model.Bonus = input.Item5;
+			        model.Steps = input.Item6;
+		        }
+		        else
+		        {
+			        model.Rides.Add(new Ride()
+			        {
+				        start = new Point() {x = input.Item2, y = input.Item1},
+				        stop = new Point() {x = input.Item4, y = input.Item3},
+				        earlistStart = input.Item5,
+				        latestFinish = input.Item6
+			        });
+		        }
+		        c++;
 	        }
 			var model = new InputFileModel();
 	        var machines = new List<Machine>();
