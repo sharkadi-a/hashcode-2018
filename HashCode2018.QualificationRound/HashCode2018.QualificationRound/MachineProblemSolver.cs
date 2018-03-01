@@ -79,7 +79,8 @@ namespace HashCode2018.QualificationRound
 	        for (var i = 0; i < context.Machines.Count; i++)
 	        {
 		        var contextMachine = context.Machines[i];
-		        outputFile.AppendLineNumbers(i, 0);
+		        outputFile.AppendLineNumbers(new int[] {i}.Concat(contextMachine.CompletedRides.Select(x => x.Number))
+			        .ToArray());
 	        }
 
 	        return outputFile;
