@@ -23,5 +23,6 @@ namespace HashCode2018.QualificationRound
 		public Point stop;
 		public int earlistStart;
 		public int latestFinish;
+		public bool boolisBusy;
 	}
 }
