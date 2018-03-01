@@ -80,7 +80,7 @@ namespace HashCode2018.QualificationRound
 	        {
 		        var contextMachine = context.Machines[i];
 		        List<int> outputNumbers = new List<int>();
-				outputNumbers.Add(i + 1);
+				outputNumbers.Add(contextMachine.CompletedRides.Count);
 				outputNumbers.AddRange(contextMachine.CompletedRides.Select(x => x.Number));
 		        outputFile.AppendLineNumbers(outputNumbers.ToArray());
 	        }
