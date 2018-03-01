@@ -1,6 +1,6 @@
-﻿namespace HashCode2018.QualificationRound.WinForm.Drawing
+﻿namespace HashCode2018.QualificationRound
 {
-	struct View
+	public class View
 	{
 		// данные нужные для представления
 	}

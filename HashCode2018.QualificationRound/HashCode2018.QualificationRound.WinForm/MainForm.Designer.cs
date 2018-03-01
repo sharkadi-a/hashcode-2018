@@ -141,6 +141,7 @@
 			// 
 			// ChartPanel
 			// 
+			this.ChartPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ChartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ChartPanel.Location = new System.Drawing.Point(403, 3);
 			this.ChartPanel.Name = "ChartPanel";
