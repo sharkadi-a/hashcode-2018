@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StartModel\InputFileModel.cs" />
     <Compile Include="MachineProblemSolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartModel\Ride.cs" />
     <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
