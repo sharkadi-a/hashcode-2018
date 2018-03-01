@@ -33,6 +33,19 @@ namespace HashCode2018.QualificationRound
 		        var ints = InputParser.Map4(value);
 				outputFile.AppendLineNumbers(ints.Item1, ints.Item2, ints.Item3, ints.Item4);
 	        }
+			var model = new InputFileModel();
+	        var machines = new List<Machine>();
+			for (var i = 0; i < model.Vechiles; i++)
+	        {
+				machines.Add(new Machine());
+			}
+		
+	        foreach (var machine in machines)
+	        {
+		        
+	        }
+			
+
 
 	        return outputFile;
         }

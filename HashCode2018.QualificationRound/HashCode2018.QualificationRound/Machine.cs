@@ -8,7 +8,7 @@ namespace HashCode2018.QualificationRound
 {
 	class Machine
 	{
-		public Point currentPos;
+		public Point currentPos = new Point(0,0);
 		public bool IsBusy;
 		public Ride CurrentRide;
 	}
