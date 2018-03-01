@@ -26,7 +26,8 @@ namespace HashCode2018.QualificationRound
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
         {
 	        var outputFile = inputFile.GetOutputFile();
-	        foreach (var value in inputFile.ReadStrings())
+
+			foreach (var value in inputFile.ReadStrings())
 	        {
 		        _writeLog("Processing value " + value);
 		        var ints = InputParser.Map4(value);
