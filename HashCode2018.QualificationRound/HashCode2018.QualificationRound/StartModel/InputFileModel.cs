@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashCode2018.QualificationRound
 {
-	class InputFileModel
+	public class InputFileModel
 	{
 		public int Rows { get; set; }
 		public int Columns { get; set; }

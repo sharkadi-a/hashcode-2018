@@ -41,7 +41,7 @@ namespace HashCode2018.QualificationRound
 		    {
 			    bool failed = true;
 			    var minPrice = int.MaxValue;
-			    var price = ProccessorPriceRide.Proccess(ride, step, car.currentPos, _context.Model.Steps, out failed);
+			    var price = ProccessorPriceRide.Proccess(ride, step, car.currentPos, _context.Model.Steps, _context.Model.Bonus, out failed);
 			    if (failed)
 			    {
 					continue;
