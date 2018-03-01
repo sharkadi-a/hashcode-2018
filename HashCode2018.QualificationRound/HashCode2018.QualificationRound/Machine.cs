@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashCode2018.QualificationRound
 {
-	class Machine
+	public class Machine
 	{
 		public Point currentPos = new Point(0,0);
 		public bool IsBusy;

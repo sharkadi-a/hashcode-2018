@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashCode2018.QualificationRound
 {
-	struct Point
+	public struct Point
 	{
 		public int x;
 		public int y;
@@ -17,7 +17,7 @@ namespace HashCode2018.QualificationRound
 			this.y = y;
 		}
 	}
-	class Ride
+	public class Ride
 	{
 		public Point start;
 		public Point stop;

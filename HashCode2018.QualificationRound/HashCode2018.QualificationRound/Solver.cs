@@ -8,9 +8,9 @@ namespace HashCode2018.QualificationRound
 {
     public  class Solver
     {
-        private object[]_cars;
+        private Machine[]_cars;
 
-        public Solver(object[] cars)
+        public Solver(Machine[] cars)
         {
             _cars = cars;
         }
@@ -26,7 +26,7 @@ namespace HashCode2018.QualificationRound
             }
         }
 
-        public  void Run(object car)
+        public  void Run(Machine car)
         {
 
         }
