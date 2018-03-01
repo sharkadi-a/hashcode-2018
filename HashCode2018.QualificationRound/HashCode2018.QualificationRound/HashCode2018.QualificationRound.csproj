@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Machine.cs" />
+    <Compile Include="Solver.cs" />
     <Compile Include="StartModel\InputFileModel.cs" />
     <Compile Include="MachineProblemSolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
