@@ -70,12 +70,18 @@ namespace HashCode2018.QualificationRound.WinForm
 		{
 			var inputFile = new InputFile(new FileInfo(PathTBx.Text));
 			ChartPanel.CreateGraphics().Clear(this.BackColor);
+			ResultTBx.Clear();
 			_manager.Start(inputFile);
 		}
 
 		private void StopBtn_Click(object sender, EventArgs e)
 		{
 			_manager.Stop();
+		}
+
+		private void panel2_Paint(object sender, PaintEventArgs e)
+		{
+
 		}
 	}
 }
