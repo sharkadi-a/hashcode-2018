@@ -7,7 +7,7 @@ using HashCode2018.Core;
 
 namespace HashCode2018.QualificationRound
 {
-	class Context
+	public class Context
 	{
 		public InputFileModel Model { get; set; }
 		public List<Machine> Machines { get; set; }

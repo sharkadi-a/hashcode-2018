@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace HashCode2018.QualificationRound
 {
-    public  class Solver
+    public class Solver
     {
-        private Machine[]_cars;
+        private Context _context;
 
-        public Solver(Machine[] cars)
+        public Solver(Context context)
         {
-            _cars = cars;
+            _context = context;
         }
 
-        public void Solve(int steps, int vehiclesNum)
+        public void Solve()
         {
-            for (int i = 0; i < steps; i++)
+            for (int i = 0; i < _context.Model.Steps; i++)
             {
-                for(int j = 0; j < vehiclesNum; j++)
+                for(int j = 0; j < _context.Model.Vechiles; j++)
                 {
-                    Run(_cars[j]);
+                    Run(_context.Machines[j]);
                 }
             }
         }
