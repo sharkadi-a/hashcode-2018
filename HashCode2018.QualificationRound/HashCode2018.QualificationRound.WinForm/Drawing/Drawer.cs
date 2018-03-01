@@ -70,7 +70,7 @@ namespace HashCode2018.QualificationRound.WinForm.Drawing
 		{
 			if (_buffer == null) return;
 			_graphics = graphics;
-			_graphics.DrawImage(_buffer,new Point(0,0));
+			_graphics.DrawImage(_buffer, new PointF(0,0));
 		}
 		private void InitView(int viewWidth, int viewHeight)
 		{
