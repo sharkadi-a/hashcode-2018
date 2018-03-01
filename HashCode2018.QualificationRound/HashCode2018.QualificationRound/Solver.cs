@@ -27,17 +27,22 @@ namespace HashCode2018.QualificationRound
 		            {
 			            Planning(car, step);
 					}
-		            Run(car);
+		            Run(car, step);
 	            }
                
             }
         }
 
+	    private void CalculateAwaitSteps(Machine car)
+	    {
+
+	    }
+
 	    private void Planning(Machine car, int step)
 	    {
 		    var rides = _context.Model.Rides;
 
-		    foreach (var ride in rides.Where(x=> !x.IsBusy))
+		    foreach (var ride in rides)
 		    {
 			    bool failed = true;
 			    var minPrice = int.MaxValue;
@@ -50,13 +55,27 @@ namespace HashCode2018.QualificationRound
 			    {
 				    minPrice = price;
 				    car.CurrentRide = ride;
+				    CalculateAwaitSteps(car);
 			    }
 		    }
+
+			if (car.CurrentRide != null)
+				_context.Model.Rides.Remove(car.CurrentRide);
 	    }
 
-	    public void Run(Machine car)
-        {
+	    public void Run(Machine car, int step)
+	    {
+		    if (!_context.Model.Rides.Any()) return;
+		    if (car.currentPos.Equals(car.CurrentRide.start) && car.CurrentRide.earlistStart > step) return;
+		    if (car.AwaitSteps > 0)
+		    {
+			    car.AwaitSteps--;
+				return;
+		    }
 
-        }
+		    car.currentPos = car.CurrentRide.stop;
+		    car.IsBusy = false;
+		    car.CurrentRide = null;
+	    }
     }
 }
