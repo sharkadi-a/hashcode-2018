@@ -36,7 +36,7 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			if (cellSize == 0) 
 				cellSize = 1;
 
-			//cellSize *= 4;
+			cellSize *= 3;
 			//writeMessage($"{cellSize}");
 			//writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
 			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
@@ -47,12 +47,12 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			var y0Graph = slice.R0 * cellSize;
 			var xGraph = (slice.C1+1) * cellSize;
 			var yGraph = (slice.R1+1) * cellSize;
-			if (xGraph > _width)
+			if (x0Graph > _width)
 			{
 				return;
 			}
 
-			if (yGraph > _height)
+			if (y0Graph > _height)
 			{
 				return;
 			}

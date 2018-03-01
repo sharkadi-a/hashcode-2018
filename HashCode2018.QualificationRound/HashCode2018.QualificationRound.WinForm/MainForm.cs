@@ -40,8 +40,8 @@ namespace HashCode2018.QualificationRound.WinForm
 		private void UpdatePanelMethod(View view)
 		{
 			var graph = ChartPanel.CreateGraphics();
-			var drawer = new Drawer(graph);
-			drawer.Start(view);
+			var drawer = new Drawer(graph, ChartPanel.Width, ChartPanel.Height);
+			drawer.Start(view, UpdateTextBoxMethod);
 			
 		}
 
@@ -69,6 +69,7 @@ namespace HashCode2018.QualificationRound.WinForm
 		private void StartBtn_Click(object sender, EventArgs e)
 		{
 			var inputFile = new InputFile(new FileInfo(PathTBx.Text));
+			ChartPanel.CreateGraphics().Clear(this.BackColor);
 			_manager.Start(inputFile);
 		}
 
