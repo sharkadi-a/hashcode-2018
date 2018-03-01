@@ -68,7 +68,7 @@ namespace HashCode2018.QualificationRound
 
 	    public void Run(Machine car, int step)
 	    {
-		    if (!_context.Model.Rides.Any()) return;
+		    if (!_context.Model.Rides.Any() && _context.Machines.All(x=> !x.IsBusy)) return;
 		    if (car.currentPos.Equals(car.CurrentRide.start) && car.CurrentRide.earlistStart > step) return;
 		    if (car.AwaitSteps > 0)
 		    {
