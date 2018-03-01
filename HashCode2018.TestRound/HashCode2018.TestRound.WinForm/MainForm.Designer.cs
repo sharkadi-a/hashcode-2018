@@ -33,9 +33,9 @@
 			this.ResultTBx = new System.Windows.Forms.TextBox();
 			this.ChartPanel = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.chkNoDraw = new System.Windows.Forms.CheckBox();
 			this.StopBtn = new System.Windows.Forms.Button();
 			this.PathTBx = new System.Windows.Forms.TextBox();
-			this.chkNoDraw = new System.Windows.Forms.CheckBox();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -76,6 +76,7 @@
 			this.ChartPanel.Name = "ChartPanel";
 			this.ChartPanel.Size = new System.Drawing.Size(709, 683);
 			this.ChartPanel.TabIndex = 4;
+			this.ChartPanel.SizeChanged += new System.EventHandler(this.ChartPanel_SizeChanged);
 			// 
 			// panel2
 			// 
@@ -90,6 +91,17 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(371, 683);
 			this.panel2.TabIndex = 5;
+			// 
+			// chkNoDraw
+			// 
+			this.chkNoDraw.AutoSize = true;
+			this.chkNoDraw.Location = new System.Drawing.Point(266, 39);
+			this.chkNoDraw.Name = "chkNoDraw";
+			this.chkNoDraw.Size = new System.Drawing.Size(80, 17);
+			this.chkNoDraw.TabIndex = 5;
+			this.chkNoDraw.Text = "No drawing";
+			this.chkNoDraw.UseVisualStyleBackColor = true;
+			this.chkNoDraw.CheckedChanged += new System.EventHandler(this.chkNoDraw_CheckedChanged);
 			// 
 			// StopBtn
 			// 
@@ -108,17 +120,6 @@
 			this.PathTBx.Size = new System.Drawing.Size(327, 20);
 			this.PathTBx.TabIndex = 0;
 			this.PathTBx.Text = global::HashCode2018.TestRound.WinForm.Properties.Settings.Default.LastFilePath;
-			// 
-			// chkNoDraw
-			// 
-			this.chkNoDraw.AutoSize = true;
-			this.chkNoDraw.Location = new System.Drawing.Point(266, 39);
-			this.chkNoDraw.Name = "chkNoDraw";
-			this.chkNoDraw.Size = new System.Drawing.Size(80, 17);
-			this.chkNoDraw.TabIndex = 5;
-			this.chkNoDraw.Text = "No drawing";
-			this.chkNoDraw.UseVisualStyleBackColor = true;
-			this.chkNoDraw.CheckedChanged += new System.EventHandler(this.chkNoDraw_CheckedChanged);
 			// 
 			// MainForm
 			// 

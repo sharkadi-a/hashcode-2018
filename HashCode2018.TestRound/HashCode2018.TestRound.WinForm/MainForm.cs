@@ -17,6 +17,8 @@ namespace HashCode2018.TestRound.WinForm
 		}
 
 		private readonly MainManager _manager = new MainManager(new PizzaCutter());
+		private Drawer _drawer;
+
 		private delegate void UpdateTextBox(string message);
 		private delegate void UpdatePanel(View view);
 		private void MainForm_Load(object sender, EventArgs e)
@@ -24,6 +26,9 @@ namespace HashCode2018.TestRound.WinForm
 			_manager.MessageReady += TextUpdateEvent;
 			_manager.ViewReady += PanelUpdateEvent;
 			PathTBx.Text = Settings.Default.LastFilePath;
+			this.DoubleBuffered = true;
+			var graph = ChartPanel.CreateGraphics();
+			_drawer = new Drawer(graph, ChartPanel.Width, ChartPanel.Height);
 		}
 
 		private void PanelUpdateEvent(object sender, View view)
@@ -33,9 +38,10 @@ namespace HashCode2018.TestRound.WinForm
 
 		private void UpdatePanelMethod(View view)
 		{
-			var graph = ChartPanel.CreateGraphics();
-			var drawer = new Drawer(graph, ChartPanel.Width, ChartPanel.Height);
-			drawer.Start(view, UpdateTextBoxMethod);
+			
+			
+			
+			_drawer.Start(view, UpdateTextBoxMethod);
 			
 		}
 
@@ -63,7 +69,7 @@ namespace HashCode2018.TestRound.WinForm
 		private void StartBtn_Click(object sender, EventArgs e)
 		{
 			var inputFile = new InputFile(new FileInfo(PathTBx.Text));
-			ChartPanel.CreateGraphics().Clear(this.BackColor);
+			_drawer.Clear(BackColor);
 			_manager.Start(inputFile);
 
 		}
@@ -79,6 +85,11 @@ namespace HashCode2018.TestRound.WinForm
 			{
 
 			}
+		}
+
+		private void ChartPanel_SizeChanged(object sender, EventArgs e)
+		{
+			_drawer.Redraw(ChartPanel.CreateGraphics());
 		}
 	}
 }
