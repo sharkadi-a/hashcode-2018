@@ -21,7 +21,7 @@ namespace HashCode2018.QualificationRound.WinForm
 			InitializeComponent();
 		}
 
-		private readonly MainManager _manager = new MainManager(new TestProblemSolver());
+		private readonly MainManager _manager = new MainManager(new MachineProblemSolver());
 		private Drawer _drawer;
 
 		private delegate void UpdateTextBox(string message);

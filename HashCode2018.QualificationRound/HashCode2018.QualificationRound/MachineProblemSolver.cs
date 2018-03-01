@@ -8,7 +8,7 @@ using HashCode2018.Core;
 
 namespace HashCode2018.QualificationRound
 {
-    public sealed class TestProblemSolver : IProblemSolver
+    public sealed class MachineProblemSolver : IProblemSolver
     {
         private Action<string> _writeLog;
 	    private Action<object> _iterationCallback;

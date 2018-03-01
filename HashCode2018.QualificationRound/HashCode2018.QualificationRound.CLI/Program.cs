@@ -31,7 +31,7 @@ namespace HashCode2018.QualificationRound.CLI
             Console.WriteLine("Total input files: {0}", files.Length);
             Console.WriteLine("Starting at: {0}", DateTime.Now);
 
-            var problemSolver = new TestProblemSolver();
+            var problemSolver = new MachineProblemSolver();
             problemSolver.SetLogOutput(Console.WriteLine);
 
             var sw = Stopwatch.StartNew();
