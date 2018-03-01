@@ -14,10 +14,11 @@ namespace HashCode2018.QualificationRound.WinForm.Proccess
 			return Task.Run<OutputFile>(() => problemSolver.Solve(inputFile, cancelToken), cancelToken)
 				.ContinueWith(t =>
 				{
-					MessageBox.Show($"Completed! Outputfile: {t.Result.FileInfo}", "Start", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show($"Completed! Outputfile: {t.Result.FileInfo}", "Start", MessageBoxButtons.OK,
+						MessageBoxIcon.Information);
+					t.Result.Dispose();
 					return t.Result;
-				})
-				.ContinueWith(t => t.Dispose());
+				});
 		}
 	}
 }
