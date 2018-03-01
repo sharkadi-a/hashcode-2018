@@ -68,6 +68,7 @@ namespace HashCode2018.QualificationRound.WinForm.Drawing
 		}
 		public void Redraw(Graphics graphics)
 		{
+			if (_buffer == null) return;
 			_graphics = graphics;
 			_graphics.DrawImage(_buffer,new Point(0,0));
 		}
