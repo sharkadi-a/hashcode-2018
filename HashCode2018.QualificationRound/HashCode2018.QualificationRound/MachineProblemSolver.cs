@@ -74,6 +74,12 @@ namespace HashCode2018.QualificationRound
 
 			StartSolve(context);
 
+	        for (var i = 0; i < context.Machines.Count; i++)
+	        {
+		        var contextMachine = context.Machines[i];
+		        outputFile.AppendLineNumbers(i, 0);
+	        }
+
 	        return outputFile;
         }
     }

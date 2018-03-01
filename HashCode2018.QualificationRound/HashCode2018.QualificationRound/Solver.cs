@@ -76,6 +76,7 @@ namespace HashCode2018.QualificationRound
 				return;
 		    }
 
+			car.CompletedRides.Add(car.CurrentRide);
 		    car.currentPos = car.CurrentRide.stop;
 		    car.IsBusy = false;
 		    car.CurrentRide = null;
