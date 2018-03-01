@@ -33,9 +33,12 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 				cellSize = _height / pizza.Rows;
 			}
 
-			//cellSize *= 5;
+			if (cellSize == 0) 
+				cellSize = 1;
+
+			//cellSize *= 4;
 			//writeMessage($"{cellSize}");
-			writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
+			//writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
 			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
 			var color = GetRandomColor();
 			//writeMessage($"{color.R} {color.G} {color.B}");

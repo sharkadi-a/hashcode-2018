@@ -63,7 +63,9 @@ namespace HashCode2018.TestRound.WinForm
 		private void StartBtn_Click(object sender, EventArgs e)
 		{
 			var inputFile = new InputFile(new FileInfo(PathTBx.Text));
+			ChartPanel.CreateGraphics().Clear(this.BackColor);
 			_manager.Start(inputFile);
+
 		}
 
 		private void StopBtn_Click(object sender, EventArgs e)

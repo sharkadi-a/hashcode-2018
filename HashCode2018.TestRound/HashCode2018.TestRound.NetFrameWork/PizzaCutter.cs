@@ -82,7 +82,7 @@ namespace HashCode2018.TestRound.NetFrameWork
                 if (slice != null)
                 {
 	                _callback?.Invoke(new View(_pizza, _cuttedOutPices, slice));
-	                _writeLog($"Slice (C0:{slice.C0}-R0:{slice.R0};C1:{slice.C1}-R1:{slice.R1}): \r\n{slice}");
+	                //_writeLog($"Slice (C0:{slice.C0}-R0:{slice.R0};C1:{slice.C1}-R1:{slice.R1}): \r\n{slice}");
 	                yield return slice;
                 }
             }
