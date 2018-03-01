@@ -59,7 +59,8 @@ namespace HashCode2018.QualificationRound
 				    minPrice = price;
 				    car.CurrentRide = ride;
 				    CalculateAwaitSteps(car);
-			    }
+                    car.IsBusy = true;
+                }
 		    }
 
 			if (car.CurrentRide != null)
@@ -68,6 +69,7 @@ namespace HashCode2018.QualificationRound
 
 	    public void Run(Machine car, int step)
 	    {
+            if (car.CurrentRide == null) return;
 		    if (!_context.Model.Rides.Any() && _context.Machines.All(x=> !x.IsBusy)) return;
 		    if (car.currentPos.Equals(car.CurrentRide.start) && car.CurrentRide.earlistStart > step) return;
 		    if (car.AwaitSteps > 0)
