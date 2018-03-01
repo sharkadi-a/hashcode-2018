@@ -32,6 +32,8 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			{
 				cellSize = _height / pizza.Rows;
 			}
+
+			//cellSize *= 5;
 			//writeMessage($"{cellSize}");
 			//writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
 			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
@@ -40,8 +42,17 @@ namespace HashCode2018.TestRound.WinForm.Drawing
 			var Brush = new SolidBrush(color);
 			var x0Graph = slice.C0 * cellSize;
 			var y0Graph = slice.R0 * cellSize;
-			var xGraph = slice.C1 * cellSize;
-			var yGraph = slice.R1 * cellSize;
+			var xGraph = (slice.C1+1) * cellSize;
+			var yGraph = (slice.R1+1) * cellSize;
+			if (xGraph > _width)
+			{
+				return;
+			}
+
+			if (yGraph > _height)
+			{
+				return;
+			}
 			_graphics.FillRectangle(Brush, x0Graph, y0Graph, xGraph - x0Graph, yGraph - y0Graph);
 			//writeMessage($"{x0Graph}:{y0Graph} {xGraph}:{yGraph}");
 			//Thread.Sleep(1000);
