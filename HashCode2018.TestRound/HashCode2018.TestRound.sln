@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.Core", "..\HashCode2018.Core\HashCode2018.Core.csproj", "{ED67C43D-DBA2-471C-8280-A872BC4E461D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.TestRound.WinForm", "HashCode2018.TestRound.WinForm\HashCode2018.TestRound.WinForm.csproj", "{7E9C4DA1-9110-420A-80C4-49EA36627EEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.TestRound.NetFrameWork", "HashCode2018.TestRound.NetFrameWork\HashCode2018.TestRound.NetFrameWork.csproj", "{5563260D-8A7F-4E91-847D-4B1676DD44DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCode2018.TestRound.CLI", "HashCode2018.TestRound.NetFrameWork\HashCode2018.TestRound.CLI.csproj", "{5563260D-8A7F-4E91-847D-4B1676DD44DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

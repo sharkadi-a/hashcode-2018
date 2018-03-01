@@ -18,7 +18,7 @@ namespace HashCode2018.TestRound.WinForm
 		public MainManager(IProblemSolver problemSolver)
 		{
 			_problemSolver = problemSolver ?? throw new ArgumentNullException(nameof(problemSolver));
-			_problemSolver.SetIterationCallback<View>(OnViewReady);
+			_problemSolver.SetIterationCallback(OnViewReady);
 			_problemSolver.SetLogOutput(OnMessageReady);
 		}
 
@@ -43,9 +43,9 @@ namespace HashCode2018.TestRound.WinForm
 			//_mainForm.Invoke(new DoUpdateMessage(MessageReady?.Invoke));
 		}
 
-		protected virtual void OnViewReady(View e)
+		protected virtual void OnViewReady(object e)
 		{
-			ViewReady?.Invoke(this, e);
+			ViewReady?.Invoke(this, (View)e);
 		}
 	}
 }

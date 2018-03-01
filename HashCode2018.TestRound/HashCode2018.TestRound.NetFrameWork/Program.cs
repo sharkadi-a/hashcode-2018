@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using HashCode2018.Core;
 
@@ -65,9 +66,12 @@ namespace HashCode2018.TestRound.NetFrameWork
         {
             foreach (var inputFile in inputFiles)
             {
+	            var sw = Stopwatch.StartNew();
+				Console.WriteLine($"Solving {inputFile}...");
 	            using (var outputFile = problemSolver.Solve(inputFile, CancellationTokenSource.Token))
 	            {
-					Console.WriteLine($"File {inputFile} solved.");
+					sw.Stop();
+					Console.WriteLine($"File {inputFile} solved in {sw.ElapsedMilliseconds} ms.");
 	            }
             }
         }
