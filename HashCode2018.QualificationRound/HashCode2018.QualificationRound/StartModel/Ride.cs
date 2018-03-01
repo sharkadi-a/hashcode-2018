@@ -17,6 +17,7 @@ namespace HashCode2018.QualificationRound
 			this.y = y;
 		}
 
+<<<<<<< HEAD
 		public bool Equals(Point other)
 		{
 			return x == other.x && y == other.y;
@@ -35,7 +36,19 @@ namespace HashCode2018.QualificationRound
 				return (x * 397) ^ y;
 			}
 		}
+=======
+		
+>>>>>>> 585e02b390ae257e247b0bd84df0067dc9d063e2
 	}
+
+	public static class PointGeometry
+	{
+		public static int Distance(this Point p1, Point p2)
+		{
+			return Math.Abs(p2.x - p1.x) + Math.Abs(p2.y - p1.y);
+		}
+	}
+
 	public class Ride
 	{
 		public Point start;
