@@ -34,6 +34,7 @@ namespace HashCode2018.QualificationRound
 	        var outputFile = inputFile.GetOutputFile();
 	        int c = 0;
 	        var model = new InputFileModel();
+	        var numberRide = 0;
 	        foreach (var value in inputFile.ReadStrings())
 	        {
 		        var input = InputParser.Map6(value);
@@ -50,7 +51,8 @@ namespace HashCode2018.QualificationRound
 		        {
 			        model.Rides.Add(new Ride()
 			        {
-				        start = new Point() {x = input.Item2, y = input.Item1},
+						Number = numberRide++,
+						start = new Point() {x = input.Item2, y = input.Item1},
 				        stop = new Point() {x = input.Item4, y = input.Item3},
 				        earlistStart = input.Item5,
 				        latestFinish = input.Item6

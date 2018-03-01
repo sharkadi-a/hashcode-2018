@@ -47,6 +47,7 @@ namespace HashCode2018.QualificationRound
 
 	public class Ride
 	{
+		public int Number;
 		public Point start;
 		public Point stop;
 		public int earlistStart;
