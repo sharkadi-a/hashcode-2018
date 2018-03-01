@@ -41,11 +41,11 @@ namespace HashCode2018.QualificationRound
 	    private void Planning(Machine car, int step)
 	    {
 		    var rides = _context.Model.Rides;
-
-		    foreach (var ride in rides)
+		    var minPrice = double.MaxValue;
+			foreach (var ride in rides)
 		    {
 			    bool failed = true;
-			    var minPrice = int.MaxValue;
+			   
 			    var price = ProccessorPriceRide.Proccess(ride, step, car.currentPos, _context.Model.Steps, _context.Model.Bonus, out failed);
 			    if (failed)
 			    {
