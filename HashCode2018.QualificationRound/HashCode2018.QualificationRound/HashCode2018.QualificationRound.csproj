@@ -49,6 +49,7 @@
     <Compile Include="View.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="a_example.in" />
     <None Include="TestInput.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
