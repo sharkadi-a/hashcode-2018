@@ -23,17 +23,17 @@ namespace HashCode2018.QualificationRound
             _writeLog = writeLogAction;
         }
 
-	    private void StartSolve(Context context)
-	    {
-			throw new NotImplementedException();
-	    }
-
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
         {
 	        var outputFile = inputFile.GetOutputFile();
+<<<<<<< HEAD
 	        int c = 0;
 	        var model = new InputFileModel();
 	        foreach (var value in inputFile.ReadStrings())
+=======
+
+			foreach (var value in inputFile.ReadStrings())
+>>>>>>> 72003a5b2af411e23ff2347c528667e510bf1ee0
 	        {
 		        var input = InputParser.Map6(value);
 		        if (c == 0)
@@ -57,21 +57,6 @@ namespace HashCode2018.QualificationRound
 		        }
 		        c++;
 	        }
-
-	        var machines = new List<Machine>();
-			for (var i = 0; i < model.Vechiles; i++)
-			{
-				machines.Add(new Machine() {currentPos = new Point(0, 0), CurrentRide = null, IsBusy = false});
-			}
-
-	        var context = new Context()
-	        {
-		        Machines = machines,
-		        Model = model,
-		        OutputFile = outputFile
-	        };
-
-			StartSolve(context);
 
 	        return outputFile;
         }
