@@ -25,7 +25,8 @@ namespace HashCode2018.QualificationRound
 
 	    private void StartSolve(Context context)
 	    {
-			throw new NotImplementedException();
+			var solver = new Solver(context);
+		    solver.Solve();
 	    }
 
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
