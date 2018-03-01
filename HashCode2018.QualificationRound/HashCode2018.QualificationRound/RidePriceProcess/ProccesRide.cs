@@ -11,6 +11,9 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 
 		public static int Proccess(Ride ride, int currentTime, Point currentPos, int modelSteps, out bool failed)
 		{
+
+		//	currentPos.Distance(ride.)
+
 			failed = true;
 			return 1;
 

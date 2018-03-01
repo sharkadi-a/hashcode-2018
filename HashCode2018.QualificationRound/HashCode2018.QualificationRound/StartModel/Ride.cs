@@ -16,7 +16,18 @@ namespace HashCode2018.QualificationRound
 			this.x = x;
 			this.y = y;
 		}
+
+		
 	}
+
+	public static class PointGeometry
+	{
+		public static int Distance(this Point p1, Point p2)
+		{
+			return Math.Abs(p2.x - p1.x) + Math.Abs(p2.y - p1.y);
+		}
+	}
+
 	public class Ride
 	{
 		public Point start;
