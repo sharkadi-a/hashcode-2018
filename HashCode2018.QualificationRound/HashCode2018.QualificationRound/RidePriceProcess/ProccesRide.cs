@@ -9,8 +9,10 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 	class ProccessorPriceRide
 	{
 
-		public int Proccess(Ride ride, int currentTime, int currentPos, out bool failed)
+		public static int Proccess(Ride ride, int currentTime, Point currentPos, int modelSteps, out bool failed)
 		{
+			failed = true;
+			return 1;
 
 		}
 	}

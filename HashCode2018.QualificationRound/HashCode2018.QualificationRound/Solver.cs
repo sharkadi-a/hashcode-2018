@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HashCode2018.QualificationRound.RidePriceProcess;
 
 namespace HashCode2018.QualificationRound
 {
@@ -17,16 +18,40 @@ namespace HashCode2018.QualificationRound
 
         public void Solve()
         {
-            for (int i = 0; i < _context.Model.Steps; i++)
+            for (int step = 0; step < _context.Model.Steps; step++)
             {
-                for(int j = 0; j < _context.Model.Vechiles; j++)
-                {
-                    Run(_context.Machines[j]);
-                }
+
+	            foreach (var car in _context.Machines)
+	            {
+		            if (!car.IsBusy)
+		            {
+			            Planning(car, step);
+					}
+		            Run(car);
+	            }
+               
             }
         }
 
-        public  void Run(Machine car)
+	    private void Planning(Machine car, int step)
+	    {
+		    var rides = _context.Model.Rides;
+
+		    foreach (var ride in rides)
+		    {
+			    bool failed = true;
+			    var minPrice = int.MaxValue;
+			    var price = ProccessorPriceRide.Proccess(ride, step, car.currentPos, _context.Model.Steps, out failed);
+			    if (price < minPrice)
+			    {
+				    minPrice = price;
+				    car.CurrentRide = ride;
+			    }
+		    }
+			throw new NotImplementedException();
+	    }
+
+	    public void Run(Machine car)
         {
 
         }
