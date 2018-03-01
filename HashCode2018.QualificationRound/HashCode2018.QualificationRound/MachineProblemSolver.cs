@@ -52,7 +52,7 @@ namespace HashCode2018.QualificationRound
 		        }
 		        c++;
 	        }
-			var model = new InputFileModel();
+			model = new InputFileModel();
 	        var machines = new List<Machine>();
 			for (var i = 0; i < model.Vechiles; i++)
 	        {
