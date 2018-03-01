@@ -17,7 +17,6 @@ namespace HashCode2018.QualificationRound
 			this.y = y;
 		}
 
-<<<<<<< HEAD
 		public bool Equals(Point other)
 		{
 			return x == other.x && y == other.y;
@@ -36,9 +35,6 @@ namespace HashCode2018.QualificationRound
 				return (x * 397) ^ y;
 			}
 		}
-=======
-		
->>>>>>> 585e02b390ae257e247b0bd84df0067dc9d063e2
 	}
 
 	public static class PointGeometry

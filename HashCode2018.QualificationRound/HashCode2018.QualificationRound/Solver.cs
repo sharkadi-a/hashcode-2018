@@ -35,7 +35,10 @@ namespace HashCode2018.QualificationRound
 
 	    private void CalculateAwaitSteps(Machine car)
 	    {
-
+		    //var steps = Math.Abs(car.currentPos.y - car.CurrentRide.start.y) +
+		    //            Math.Abs(car.currentPos.x - car.CurrentRide.start.y);
+		    var steps = car.currentPos.Distance(car.CurrentRide.start) + car.CurrentRide.start.Distance(car.CurrentRide.stop);
+		    car.AwaitSteps = steps;
 	    }
 
 	    private void Planning(Machine car, int step)
