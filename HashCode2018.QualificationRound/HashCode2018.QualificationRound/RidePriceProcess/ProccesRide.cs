@@ -27,14 +27,14 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 			var timeIdle = ride.earlistStart - timeStartReached;
 			if (timeIdle < 0)
 			{
-				timeIdle = 0;
+				timeIdle = timeIdle/2;
 			}
 			var bonus = 0;
 			if (timeStartReached <= ride.earlistStart)
 			{
 				bonus = modelBonus;
 			}
-			var price = timeIdle + timeToStartGo - bonus * 1.001;
+			var price = timeIdle + timeToStartGo - bonus * 0.99;
 			failed = false;
 			return price;
 		}
