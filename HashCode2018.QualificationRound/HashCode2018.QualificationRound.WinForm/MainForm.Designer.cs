@@ -148,6 +148,7 @@
 			this.tableLayoutPanel1.SetRowSpan(this.ChartPanel, 2);
 			this.ChartPanel.Size = new System.Drawing.Size(718, 537);
 			this.ChartPanel.TabIndex = 7;
+			this.ChartPanel.Resize += new System.EventHandler(this.ChartPanel_Resize);
 			// 
 			// MainForm
 			// 

@@ -10,10 +10,14 @@ namespace HashCode2018.QualificationRound.WinForm.Drawing
 {
 	internal class Drawer
 	{
-		private readonly Graphics _graphics;
+		private Graphics _graphics;
 		private readonly int _width;
 		private readonly int _height;
-		private static Random _random = new Random();
+		private readonly Random _random = new Random();
+		private int? _cellSize;
+		private Bitmap _buffer;
+		private int _scale = 3;
+
 		public Drawer(Graphics graphics, int width, int height)
 		{
 			_graphics = graphics;
@@ -25,28 +29,23 @@ namespace HashCode2018.QualificationRound.WinForm.Drawing
 		{
 			//var pizza = view.Pizza;
 			//var slice = view.NewSlice;
-			//int cellSize;
-			
-			//if (_width / pizza.Columns < _height / pizza.Rows)
-			//{
-			//	cellSize = _width / pizza.Columns;
-			//}
-			//else
-			//{
-			//	cellSize = _height / pizza.Rows;
-			//}
+			if (_cellSize == null)
+			{
+				InitView(0, 0);
+			}
+		
 
-			//if (cellSize == 0) 
-			//	cellSize = 1;
-
-			//cellSize *= 3;
 			
-			//var color = GetRandomColor();
-			//var Brush = new SolidBrush(color);
-			//var x0Graph = slice.C0 * cellSize;
-			//var y0Graph = slice.R0 * cellSize;
-			//var xGraph = (slice.C1+1) * cellSize;
-			//var yGraph = (slice.R1+1) * cellSize;
+			//writeMessage($"{cellSize}");
+			//writeMessage($"{slice.C0}:{slice.R0} {slice.C1}:{slice.R1}");
+			//_random = new Random(slice.C0 + slice.C1 + slice.R0 + slice.R1);
+			var color = GetRandomColor();
+			//writeMessage($"{color.R} {color.G} {color.B}");
+			var Brush = new SolidBrush(color);
+			var x0Graph = 0 * _cellSize.Value;
+			var y0Graph = 0 * _cellSize.Value;
+			var xGraph = (0+1) * _cellSize.Value;
+			var yGraph = (0+1) * _cellSize.Value;
 			//if (x0Graph > _width)
 			//{
 			//	return;
@@ -56,8 +55,39 @@ namespace HashCode2018.QualificationRound.WinForm.Drawing
 			//{
 			//	return;
 			//}
-			//_graphics.FillRectangle(Brush, x0Graph, y0Graph, xGraph - x0Graph, yGraph - y0Graph);
+			var bufGraphics = Graphics.FromImage(_buffer);
+			bufGraphics.FillRectangle(Brush, x0Graph, y0Graph, xGraph - x0Graph, yGraph - y0Graph);
+			_graphics.FillRectangle(Brush, x0Graph, y0Graph, xGraph - x0Graph, yGraph - y0Graph);
+			//writeMessage($"{x0Graph}:{y0Graph} {xGraph}:{yGraph}");
+			//Thread.Sleep(1000);
 		}
+
+		public void Clear(Color color)
+		{
+			_graphics.Clear(color);
+		}
+		public void Redraw(Graphics graphics)
+		{
+			_graphics = graphics;
+			_graphics.DrawImage(_buffer,new Point(0,0));
+		}
+		private void InitView(int viewWidth, int viewHeight)
+		{
+			if (_width / viewWidth < _height / viewHeight)
+			{
+				_cellSize = _width / viewWidth;
+			}
+			else
+			{
+				_cellSize = _height / viewHeight;
+			}
+			_cellSize *= _scale;
+			if (_cellSize == 0)
+				_cellSize = 1;
+			_buffer = new Bitmap(_width*_scale,_height*_scale);
+		}
+
+
 
 		private Color GetRandomColor()
 		{
