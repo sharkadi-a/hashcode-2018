@@ -37,18 +37,21 @@ namespace HashCode2018.QualificationRound
 	    {
 		    var rides = _context.Model.Rides;
 
-		    foreach (var ride in rides)
+		    foreach (var ride in rides.Where(x=> !x.IsBusy))
 		    {
 			    bool failed = true;
 			    var minPrice = int.MaxValue;
 			    var price = ProccessorPriceRide.Proccess(ride, step, car.currentPos, _context.Model.Steps, out failed);
+			    if (failed)
+			    {
+					continue;
+			    }
 			    if (price < minPrice)
 			    {
 				    minPrice = price;
 				    car.CurrentRide = ride;
 			    }
 		    }
-			throw new NotImplementedException();
 	    }
 
 	    public void Run(Machine car)
