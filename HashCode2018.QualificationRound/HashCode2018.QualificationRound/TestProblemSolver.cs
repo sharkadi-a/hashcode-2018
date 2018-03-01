@@ -13,7 +13,7 @@ namespace HashCode2018.QualificationRound
         private Action<string> _writeLog;
 	    private Action<dynamic> _iterationCallback;
 
-        public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
+        public void SetIterationCallback(Action<object> callback)
         {
 	        _iterationCallback = o => callback(o);
         }

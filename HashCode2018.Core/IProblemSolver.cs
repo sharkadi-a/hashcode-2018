@@ -9,7 +9,7 @@ namespace HashCode2018.Core
 {
     public interface IProblemSolver
     {
-	    void SetIterationCallback<TData>(Action<TData> callback) where TData : class;
+	    void SetIterationCallback(Action<object> callback);
         void SetLogOutput(Action<string> writeLogAction);
         OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken);
     }

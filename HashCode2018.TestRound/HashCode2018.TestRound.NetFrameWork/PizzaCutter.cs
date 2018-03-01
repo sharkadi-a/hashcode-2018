@@ -88,15 +88,9 @@ namespace HashCode2018.TestRound.NetFrameWork
             }
         }
 
-	    //private IEnumerable<Slice> Cut(int minIngridientCount, int maxCellsPerSliceCount)
-     //   {
-     //       return CutPizza(minIngridientCount, maxCellsPerSliceCount);
-     //   }
-
-	    public void SetIterationCallback<TData>(Action<TData> callback) where TData : class
+	    public void SetIterationCallback(Action<object> callback)
 	    {
-		    if (typeof(TData) != typeof(View)) throw new Exception();
-		    _callback = c => callback(c as TData);
+		    _callback = callback;
 	    }
 
 	    public void SetLogOutput(Action<string> writeLogAction)
