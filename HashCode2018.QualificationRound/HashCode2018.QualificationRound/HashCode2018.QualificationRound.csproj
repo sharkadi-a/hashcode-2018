@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="Machine.cs" />
+    <Compile Include="RidePriceProcess\ProccesRide.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="StartModel\InputFileModel.cs" />
     <Compile Include="MachineProblemSolver.cs" />
