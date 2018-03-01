@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using HashCode2018.Core;
@@ -11,8 +12,8 @@ namespace HashCode2018.TestRound.NetFrameWork
     {
         private Pizza _pizza;
         private bool[][] _cuttedOutPices;
-	    private Action<View> _callback;
-	    private Action<string> _writeLog;
+	    private Action<View> _callback = view => { };
+	    private Action<string> _writeLog = s => { };
 
 		void InitPizza()
         {
@@ -74,7 +75,11 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 			foreach (var cell in _pizza)
 			{
-				if (cancellationToken.IsCancellationRequested) break;
+				if (cancellationToken.IsCancellationRequested)
+				{
+					_writeLog("Execution stopped!");
+					break;
+				}
 	            if (IsAlreadyCutted(cell))
 		            continue;
 
@@ -100,7 +105,8 @@ namespace HashCode2018.TestRound.NetFrameWork
 
 	    public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
 	    {
-		    _writeLog($"Begin solving input file {inputFile}");
+		    var sw = Stopwatch.StartNew();
+		    _writeLog($"*** Begin solving input file {inputFile}");
 		    var outputFile = inputFile.GetOutputFile();
 		    int lineCount = 0, minIngridients = 0, maxCellsPerSlice = 0;
 		    var dataLines = new List<string>();
@@ -137,6 +143,7 @@ namespace HashCode2018.TestRound.NetFrameWork
 			    outputFile.AppendLineNumbers(slice.R0, slice.C0, slice.R1, slice.C1);
 		    }
 
+		    _writeLog($"** Completed in {sw.ElapsedMilliseconds} ms.");
 		    _writeLog($"Output written to {outputFile}");
 		    return outputFile;
 	    }

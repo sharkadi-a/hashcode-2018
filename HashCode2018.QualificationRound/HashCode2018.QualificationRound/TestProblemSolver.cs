@@ -11,11 +11,11 @@ namespace HashCode2018.QualificationRound
     public sealed class TestProblemSolver : IProblemSolver
     {
         private Action<string> _writeLog;
-	    private Action<dynamic> _iterationCallback;
+	    private Action<object> _iterationCallback;
 
         public void SetIterationCallback(Action<object> callback)
         {
-	        _iterationCallback = o => callback(o);
+	        _iterationCallback = callback;
         }
 
         public void SetLogOutput(Action<string> writeLogAction)
