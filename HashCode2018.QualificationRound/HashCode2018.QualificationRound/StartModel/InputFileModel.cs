@@ -15,7 +15,7 @@ namespace HashCode2018.QualificationRound
 		public int Bonus { get; set; }
 		public int Steps { get; set; }
 
-		public List<Ride> Rides = new List<Ride>();
+		public readonly List<Ride> Rides = new List<Ride>();
 		
 	}
 }

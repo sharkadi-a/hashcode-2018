@@ -40,5 +40,11 @@ namespace HashCode2018.Core
             var parsed = Parse(inputLine).ToArray();
             return new Tuple<int, int, int, int>(parsed[0], parsed[1], parsed[2], parsed[3]);
         }
+
+	    public static Tuple<int, int, int, int, int, int> Map6(string inputLine)
+	    {
+		    var parsed = Parse(inputLine).ToArray();
+		    return new Tuple<int, int, int, int, int, int>(parsed[0], parsed[1], parsed[2], parsed[3], parsed[4], parsed[5]);
+	    }
     }
 }
