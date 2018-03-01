@@ -9,7 +9,7 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 	class ProccessorPriceRide
 	{
 
-		public static int Proccess(Ride ride, int currentStep, Point currentPos, int maxStep, int modelBonus,
+		public static double Proccess(Ride ride, int currentStep, Point currentPos, int maxStep, int modelBonus,
 			out bool failed)
 		{
 			var timeToRide = ride.start.Distance(ride.stop);
@@ -25,8 +25,12 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 			var timeStartReached = currentStep + timeToStartGo;
 
 			var timeIdle = ride.earlistStart - timeStartReached;
-
-			var price = timeIdle + timeToStartGo;
+			var bonus = 0;
+			if (timeStartReached <= ride.earlistStart)
+			{
+				bonus = modelBonus;
+			}
+			var price = timeIdle + timeToStartGo - bonus * 1.01;
 			failed = false;
 			return price;
 		}
