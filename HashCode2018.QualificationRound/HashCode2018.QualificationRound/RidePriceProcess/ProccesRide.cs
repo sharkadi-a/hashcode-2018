@@ -16,7 +16,7 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 			var timeToStartGo = currentPos.Distance(ride.start);
 			var maxRideTimeEnd = currentStep + timeToRide + timeToStartGo;
 
-			if (maxRideTimeEnd > ride.latestFinish && maxRideTimeEnd > maxStep)
+			if (maxRideTimeEnd > ride.latestFinish || maxRideTimeEnd > maxStep)
 			{
 				failed = true;
 				return int.MaxValue;
@@ -25,12 +25,16 @@ namespace HashCode2018.QualificationRound.RidePriceProcess
 			var timeStartReached = currentStep + timeToStartGo;
 
 			var timeIdle = ride.earlistStart - timeStartReached;
+			if (timeIdle < 0)
+			{
+				timeIdle = Math.Abs(timeIdle)/ 2;
+			}
 			var bonus = 0;
 			if (timeStartReached <= ride.earlistStart)
 			{
 				bonus = modelBonus;
 			}
-			var price = timeIdle + timeToStartGo - bonus * 1.01;
+			var price = timeIdle + timeToStartGo - bonus * 0.99;
 			failed = false;
 			return price;
 		}
