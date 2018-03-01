@@ -56,7 +56,7 @@
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(941, 638);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1124, 543);
 			this.tableLayoutPanel1.TabIndex = 9;
 			// 
 			// panel1
@@ -136,7 +136,7 @@
 			this.ResultTBx.Multiline = true;
 			this.ResultTBx.Name = "ResultTBx";
 			this.ResultTBx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.ResultTBx.Size = new System.Drawing.Size(394, 557);
+			this.ResultTBx.Size = new System.Drawing.Size(394, 462);
 			this.ResultTBx.TabIndex = 8;
 			// 
 			// ChartPanel
@@ -146,14 +146,14 @@
 			this.ChartPanel.Location = new System.Drawing.Point(403, 3);
 			this.ChartPanel.Name = "ChartPanel";
 			this.tableLayoutPanel1.SetRowSpan(this.ChartPanel, 2);
-			this.ChartPanel.Size = new System.Drawing.Size(535, 632);
+			this.ChartPanel.Size = new System.Drawing.Size(718, 537);
 			this.ChartPanel.TabIndex = 7;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(941, 638);
+			this.ClientSize = new System.Drawing.Size(1124, 543);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "MainForm";
 			this.Text = "Fabolous Coders - Qualification Round";
