@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HashCode2018.Core;
 using HashCode2018.QualificationRound.WinForm.Drawing;
 
@@ -10,7 +11,13 @@ namespace HashCode2018.QualificationRound.WinForm.Proccess
 	{
 		public Task Start(IProblemSolver problemSolver, InputFile inputFile, CancellationToken cancelToken)
 		{
-			return Task.Run(() => problemSolver.Solve(inputFile, cancelToken).Dispose(), cancelToken);
+			return Task.Run<OutputFile>(() => problemSolver.Solve(inputFile, cancelToken), cancelToken)
+				.ContinueWith(t =>
+				{
+					MessageBox.Show($"Completed! Outputfile: {t.Result.FileInfo}", "Start", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return t.Result;
+				})
+				.ContinueWith(t => t.Dispose());
 		}
 	}
 }
