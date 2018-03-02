@@ -5,10 +5,10 @@ Google #HashCode
 
 Hi there! This is the repository for #HashCode 2018 coding competition solution by "Fabolous Coders" team (Russia):
 
-* [https://github.com/sharkadi-a](Andrey Sharkadi)
+* [Andrey Sharkadi](https://github.com/sharkadi-a)
 * Ivan Babkov
-* [https://github.com/Mikezar](Mikhail Serdyuk)
-* [https://github.com/pashtetus1](Pavel Gorbenko)
+* [Mikhail Serdyuk](https://github.com/Mikezar)
+* [Pavel Gorbenko](https://github.com/pashtetus1)
 
 Repository contents:
 
