@@ -5,6 +5,13 @@ Google #HashCode
 
 Hi there! This is the repository for #HashCode 2018 coding competition solution by "Fabolous Coders" team (Russia):
 
+* [https://github.com/sharkadi-a](Andrey Sharkadi)
+* Ivan Babkov
+* [https://github.com/Mikezar](Mikhail Serdyuk)
+* [https://github.com/pashtetus1](Pavel Gorbenko)
+
+Repository contents:
+
 * HashCode2018.TestRound - test round solution (cutting pizza);
 * HashCode2018.QualificationRound - qualification round solution (city car rides);
 
