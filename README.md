@@ -3,7 +3,7 @@ Google #HashCode
 
 ## Repository for Google #HashCode 2018 competition
 
-Hi there! This is the repository for #HashCode 2018 coding competition solution by "Fabolous Coders" team (Russia):
+Hi there! This is the repository for solution provided by "Fabulous Coders" team (Russian Federation) to #HashCode 2018 programming competition.
 
 * [Andrey Sharkadi](https://github.com/sharkadi-a)
 * Ivan Babkov
@@ -34,6 +34,6 @@ Repository contents:
 
 *Final score: 44'025'741.* The winner's score was 49'776'211.
 
-Our team came in 885th place of overall 4856 teams.
+Our team ranked 885th among 4856 teams.
 
 
