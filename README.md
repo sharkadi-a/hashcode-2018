@@ -6,7 +6,7 @@ Google #HashCode
 Hi there! This is the repository for solution provided by "Fabulous Coders" team (Russian Federation) to #HashCode 2018 programming competition.
 
 * [Andrey Sharkadi](https://github.com/sharkadi-a)
-* Ivan Babkov
+* [Ivan Babkov](https://github.com/ibabkov)
 * [Mikhail Serdyuk](https://github.com/Mikezar)
 * [Pavel Gorbenko](https://github.com/pashtetus1)
 
