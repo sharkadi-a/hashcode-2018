@@ -1,21 +1,39 @@
-Google # Hash Code
+Google #HashCode
 ==================
 
-Репозиторий для Google # Hash Code 2018:
+## Repository for Google #HashCode 2018 competition
 
-* HashCode2018.TestRound - солюшен для тестового раунда (разрезание пиццы);
-* HashCode2018.QualificationRound - солюшен для отборочного раунда.
+Hi there! This is the repository for solution provided by "Fabulous Coders" team (Russian Federation) to #HashCode 2018 programming competition.
 
-## Результат тестового раунда
+* [Andrey Sharkadi](https://github.com/sharkadi-a)
+* [Ivan Babkov](https://github.com/ibabkov)
+* [Mikhail Serdyuk](https://github.com/Mikezar)
+* [Pavel Gorbenko](https://github.com/pashtetus1)
+
+Repository contents:
+
+* HashCode2018.TestRound - test round solution (cutting pizza);
+* HashCode2018.QualificationRound - qualification round solution (city car rides);
+
+## Test round results
 
 1. Example: 8
 2. Small: 30
-3. Medium: 47708
-4. Big: 881547
+3. Medium: 47'708
+4. Big: 88'1547
 
-*Total score: 929 293*
+*Final score: 929'293.*
 
-_Fabolous coders -be fab, code fab_
+## Qualifiaction round results 🏆
 
+1. A - example: 10
+2. B - should be easy: 176'852
+3. C - no hurry: 15'781'212
+4. D - metropolis: 6'904'689
+5. E - high bonus: 21'162'978
+
+*Final score: 44'025'741.* The winner's score was 49'776'211.
+
+Our team ranked 885th among 4856 teams.
 
 
