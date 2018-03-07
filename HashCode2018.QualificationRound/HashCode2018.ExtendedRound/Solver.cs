@@ -10,14 +10,17 @@ namespace HashCode2018.ExtendedRound
 {
     public class Solver : IProblemSolver
     {
+        private Action<string> _writeLog;
+        private Action<object> _iterationCallback;
+
         public void SetIterationCallback(Action<object> callback)
         {
-            throw new NotImplementedException();
+            _iterationCallback = callback;
         }
 
         public void SetLogOutput(Action<string> writeLogAction)
         {
-            throw new NotImplementedException();
+            _writeLog = writeLogAction;
         }
 
         public OutputFile Solve(InputFile inputFile, CancellationToken cancellationToken)
