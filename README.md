@@ -5,10 +5,12 @@ Google #HashCode
 
 Hi there! This is the repository for solution provided by "Fabulous Coders" team (Russian Federation) to #HashCode 2018 programming competition.
 
-* [Andrey Sharkadi](https://github.com/sharkadi-a)
+Team members (in alphabet order):
+
 * [Ivan Babkov](https://github.com/ibabkov)
-* [Mikhail Serdyuk](https://github.com/Mikezar)
 * [Pavel Gorbenko](https://github.com/pashtetus1)
+* [Mikhail Serdyuk](https://github.com/Mikezar)
+* [Andrey Sharkadi](https://github.com/sharkadi-a)
 
 Repository contents:
 
